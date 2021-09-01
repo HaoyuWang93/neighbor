@@ -1,0 +1,85 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>BOS-07/28/2045</title>
+
+  <script src="aframe/aframe.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/custom.css">
+
+  <div style='position: fixed;
+  bottom: 15px;
+  left: 20px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="3-before2.html"><button class="button">PREVIOUS</button></a>
+  </div>
+
+  <div style='position: fixed;
+  bottom: 15px;
+  left: 120px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="5-after1.html"><button class="button">NEXT</button></a>
+  </div>
+
+  <div style='position: fixed;
+  top: 15px;
+  left: 20px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+  </div>
+</head>
+
+<body>
+
+<a-scene vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-assets>
+    <img id="left" src="images/photos/left.jpg">
+    <img id="right" src="images/photos/right.jpg">
+    <img id="top" src="images/photos/top.jpg">
+    <img id="bottom" src="images/photos/bottom.jpg">
+
+  </a-assets>
+  <a-sky color="black"></a-sky>
+  <a-image src="#left" width="36" height="6"
+    position="-4 2 9"
+    rotation="0 90 0"></a-image>
+  <a-image src="#right" width="36" height="6"
+    position="4 2 9"
+    rotation="0 90 0"></a-image>
+  <a-image src="#top" width="36" height="6"
+    position="0 6 9"
+    rotation="90 90 0"></a-image>
+  <a-image src="#bottom" width="36" height="6"
+    position="0 -2 9"
+    rotation="90 90 0"></a-image>
+
+  <a-text
+    value="The summer has been fulfilling so far,
+    with another 'unprecedented' heat vaporizing the fears of Omega invasions.
+
+    Despite bars and cafes remain closed,
+    I somehow find the Boston of my imagination
+    when I saw sailors racing at the flooded harbor
+    and their audiences cheering on balconies.
+
+    The bad news is that
+    my HOME PORT will arrive tomorrow.
+
+    L5 lockdown is coming..."
+    line-height=55
+    align=center
+    width="7"
+    position="0 2 -9"
+    rotation="0 0 0"></a-text>
+
+</a-scene>
+
+</body>
+</html
