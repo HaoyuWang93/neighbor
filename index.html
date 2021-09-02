@@ -59,17 +59,35 @@ z-index: 1;'>
         timeout.setAttribute("visible")
     }, 8500);
       setTimeout(() => {
-          let timeout = document.querySelector("#re3")
-      timeout.setAttribute("visible")
-    }, 10000);
-      setTimeout(() => {
-          let timeout = document.querySelector("#re4")
-          timeout.setAttribute("visible")
-    }, 11500);
-
+        let timeout = document.querySelector("#replybutton")
+        timeout.setAttribute("visible")
+    }, 9500);
       })
     }
   })
+
+  AFRAME.registerComponent("hide1", {
+    init: function() {
+      this.el.addEventListener("click", (e) => {
+        let hide1 = document.querySelector("#replybutton")
+        hide1.setAttribute("visible", false)
+      })
+    }
+  })
+
+  AFRAME.registerComponent("timeout1", {
+    init: function() {
+      this.el.addEventListener("click", (e) => {
+          let timeout1 = document.querySelector("#re3")
+          timeout1.setAttribute("visible");
+        setTimeout(() => {
+          let timeout1 = document.querySelector("#re4")
+          timeout1.setAttribute("visible")
+    }, 2000);
+  })
+}
+})
+
   AFRAME.registerComponent("weblink", {
   schema: {
     url: {
@@ -88,45 +106,32 @@ z-index: 1;'>
   <a-sky id="skyid" src="images/1.jpg" rotation="0 -90 0"></a-sky>
 
   <a-assets>
-  <img id="airscan" src="images/rep1.jpg">
+  <img id="airscan" src="images/rep1.png">
   <img id="exit" src="images/exit.png">
+  <img id="ph0" src="images/screen/ph0.png">
+  <img id="rep" src="images/screen/rep.png">
+  <img id="re" src="images/screen/re.png">
 </a-assets>
 
-  <a-plane color="black" height="2" width="1.2"
-  opacity="0.5"
+  <a-image id="phone"
+  src= "#ph0" height="2" width="1.2"
   position="-2 1.2 -1.5"
-  rotation="0 45 0"></a-plane>
+  rotation="0 45 0"
+  radius="0.05"></a-image>
 
-  <a-text
-    value="ID: 12F
-    HOME EXTENSION (15)"
-    line-height=60
-    align=center
-    width="1.5"
-    position="-2 2.05 -1.49"
-    rotation="0 45 0"></a-text>
-
-  <a-text id="reportbutton"
-    geometry="primitive:plane;
-    width:0.6; height:0.4;"
-    material="color: white";
-    color="black"
-    value="CLICK to
-    report your
-    Airscan result"
-    line-height=60
-    align=center
-    width="2"
-    position="-2 0.5 -1.49"
+  <a-image id="reportbutton"
+    src= "#rep"
+    height="0.8" width="0.8"
+    position="-2 0.8 -1.49"
     rotation="0 45 0"
     hide
-    timeout></a-text>
+    timeout></a-image>
 
   <a-image id="result" src="#airscan"
     visible="false"
-    width="0.6" height="0.3"
+    width="0.55" height="0.275"
     opacity="0.75"
-    position="-1.7 1.75 -1.49"
+    position="-1.7 1.68 -1.49"
     rotation="0 45 0"></a-image>
 
   <a-text id="re1"
@@ -159,34 +164,43 @@ z-index: 1;'>
 
   <a-text id="in2"
     visible="false"
-    value="8F: @12F looking forward to
-    .      your model shop bro!"
-    color="#AAFF80"
-    line-height=60
-    align=left
-    width="1.2"
-    position="-1.9 1.1 -0.9"
-    rotation="0 45 0"></a-text>
-
-  <a-text id="in3"
-    visible="false"
     value="3F: @ALL my cafe will close for today"
     color="#FFBFBF"
     line-height=60
     align=left
     width="1.2"
-    position="-1.9 0.95 -0.9"
+    position="-1.9 1.15 -0.9"
     rotation="0 45 0"></a-text>
 
-  <a-text id="in4"
+  <a-text id="in3"
     visible="false"
     value="3F: i need some sleep"
     color="#FFBFBF"
     line-height=60
     align=left
     width="1.2"
-    position="-1.9 0.85 -0.9"
+    position="-1.9 1.05 -0.9"
     rotation="0 45 0"></a-text>
+
+  <a-text id="in4"
+    visible="false"
+    value="8F: @12F looking forward to
+    .      your model shop bro!"
+    color="#AAFF80"
+    line-height=60
+    align=left
+    width="1.2"
+    position="-1.9 0.9 -0.9"
+    rotation="0 45 0"></a-text>
+
+  <a-image id="replybutton"
+    visible="false"
+    src= "#re"
+    height="0.3" width="0.6"
+    position="-2 0.4 -1.49"
+    rotation="0 45 0"
+    hide1
+    timeout1></a-image>
 
   <a-text id="re3"
     visible="false"
