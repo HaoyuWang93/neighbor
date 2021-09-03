@@ -26,43 +26,47 @@ z-index: 1;'>
       this.el.addEventListener("click", (e) => {
         let hide = document.querySelector("#reportbutton")
         hide.setAttribute("visible", false)
-      })
+      }, {once: true})
     }
   })
   AFRAME.registerComponent("timeout", {
     init: function() {
       this.el.addEventListener("click", (e) => {
-          let timeout = document.querySelector("#result")
-          timeout.setAttribute("visible");
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph1");
         setTimeout(() => {
-          let timeout = document.querySelector("#re1")
-          timeout.setAttribute("visible")
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph2")
     }, 1500);
         setTimeout(() => {
-          let timeout = document.querySelector("#re2")
-          timeout.setAttribute("visible")
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph3")
     }, 3500);
         setTimeout(() => {
-          let timeout = document.querySelector("#in1")
-          timeout.setAttribute("visible")
-    }, 5000);
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph4")
+    }, 5500);
         setTimeout(() => {
-          let timeout = document.querySelector("#in2")
-      timeout.setAttribute("visible")
-    }, 6500);
+          let timeout = document.querySelector("#phone")
+      timeout.setAttribute("src", "#ph5")
+    }, 7000);
         setTimeout(() => {
-          let timeout = document.querySelector("#in3")
-      timeout.setAttribute("visible")
-    }, 7500);
+          let timeout = document.querySelector("#phone")
+      timeout.setAttribute("src", "#ph6")
+    }, 8000);
       setTimeout(() => {
-        let timeout = document.querySelector("#in4")
-        timeout.setAttribute("visible")
-    }, 8500);
+        let timeout = document.querySelector("#phone")
+        timeout.setAttribute("src", "#ph7")
+    }, 10000);
       setTimeout(() => {
         let timeout = document.querySelector("#replybutton")
         timeout.setAttribute("visible")
-    }, 9500);
-      })
+    }, 11000);
+    setTimeout(() => {
+      let timeout = document.querySelector("#go")
+      timeout.setAttribute("visible")
+    }, 11000);
+      }, {once: true})
     }
   })
 
@@ -71,20 +75,24 @@ z-index: 1;'>
       this.el.addEventListener("click", (e) => {
         let hide1 = document.querySelector("#replybutton")
         hide1.setAttribute("visible", false)
-      })
+      }, {once: true})
     }
   })
 
   AFRAME.registerComponent("timeout1", {
     init: function() {
       this.el.addEventListener("click", (e) => {
-          let timeout1 = document.querySelector("#re3")
-          timeout1.setAttribute("visible");
+          let timeout1 = document.querySelector("#phone")
+          timeout1.setAttribute("src", "#ph8");
         setTimeout(() => {
-          let timeout1 = document.querySelector("#re4")
-          timeout1.setAttribute("visible")
+          let timeout1 = document.querySelector("#phone")
+          timeout1.setAttribute("src", "#ph9")
     }, 2000);
-  })
+      setTimeout(() => {
+        let timeout = document.querySelector("#door")
+        timeout.setAttribute("visible")
+    }, 2000);
+  }, {once: true})
 }
 })
 
@@ -102,131 +110,67 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
-  <a-sky id="skyid" src="images/1.jpg" rotation="0 -90 0"></a-sky>
-
   <a-assets>
-  <img id="airscan" src="images/rep1.png">
+  <img id="myspace1" src="images/1.jpg">
   <img id="exit" src="images/exit.png">
-  <img id="ph0" src="images/screen/ph0.png">
   <img id="rep" src="images/screen/rep.png">
   <img id="re" src="images/screen/re.png">
+  <img id="ph0" src="images/screen/ph0.png">
+  <img id="ph1" src="images/screen/ph1.png">
+  <img id="ph2" src="images/screen/ph2.png">
+  <img id="ph3" src="images/screen/ph3.png">
+  <img id="ph4" src="images/screen/ph4.png">
+  <img id="ph5" src="images/screen/ph5.png">
+  <img id="ph6" src="images/screen/ph6.png">
+  <img id="ph7" src="images/screen/ph7.png">
+  <img id="ph8" src="images/screen/ph8.png">
+  <img id="ph9" src="images/screen/ph9.png">
 </a-assets>
+
+<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-sky id="skyid" src="#myspace1" rotation="0 -90 0"></a-sky>
 
   <a-image id="phone"
   src= "#ph0" height="2" width="1.2"
-  position="-2 1.2 -1.5"
-  rotation="0 45 0"
-  radius="0.05"></a-image>
+  position="-1.5 1.2 -1.5"
+  rotation="0 45 0">
+  </a-image>
 
   <a-image id="reportbutton"
     src= "#rep"
     height="0.8" width="0.8"
-    position="-2 0.8 -1.49"
+    position="-1.49 0.8 -1.49"
     rotation="0 45 0"
     hide
     timeout></a-image>
-
-  <a-image id="result" src="#airscan"
-    visible="false"
-    width="0.55" height="0.275"
-    opacity="0.75"
-    position="-1.7 1.68 -1.49"
-    rotation="0 45 0"></a-image>
-
-  <a-text id="re1"
-    visible="false"
-    value="sorry for late reporting :"
-    line-height=60
-    align=right
-    width="1.2"
-    position="-1.2 1.5 -1.4"
-    rotation="0 45 0"></a-text>
-
-  <a-text id="re2"
-    visible="false"
-    value="spent overnight on my workbench :"
-    line-height=60
-    align=right
-    width="1.2"
-    position="-1.2 1.4 -1.4"
-    rotation="0 45 0"></a-text>
-
-  <a-text id="in1"
-    visible="false"
-    value="6F: don't worry"
-    color="#FF80FF"
-    line-height=60
-    align=left
-    width="1.2"
-    position="-1.9 1.25 -0.9"
-    rotation="0 45 0"></a-text>
-
-  <a-text id="in2"
-    visible="false"
-    value="3F: @ALL my cafe will close for today"
-    color="#FFBFBF"
-    line-height=60
-    align=left
-    width="1.2"
-    position="-1.9 1.15 -0.9"
-    rotation="0 45 0"></a-text>
-
-  <a-text id="in3"
-    visible="false"
-    value="3F: i need some sleep"
-    color="#FFBFBF"
-    line-height=60
-    align=left
-    width="1.2"
-    position="-1.9 1.05 -0.9"
-    rotation="0 45 0"></a-text>
-
-  <a-text id="in4"
-    visible="false"
-    value="8F: @12F looking forward to
-    .      your model shop bro!"
-    color="#AAFF80"
-    line-height=60
-    align=left
-    width="1.2"
-    position="-1.9 0.9 -0.9"
-    rotation="0 45 0"></a-text>
 
   <a-image id="replybutton"
     visible="false"
     src= "#re"
     height="0.3" width="0.6"
-    position="-2 0.4 -1.49"
+    position="-1.49 0.4 -1.49"
     rotation="0 45 0"
     hide1
     timeout1></a-image>
 
-  <a-text id="re3"
+ <a-image id="door"
     visible="false"
-    value="@8F Almost ready! :"
-    line-height=60
-    align=right
-    width="1.2"
-    position="-1.2 0.8 -1.4"
-    rotation="0 45 0"></a-text>
-
-  <a-text id="re4"
-    visible="false"
-    value="will let you guys know :"
-    line-height=60
-    align=right
-    width="1.2"
-    position="-1.2 0.7 -1.4"
-    rotation="0 45 0"></a-text>
-
- <a-image
     src= "#exit"
-    width="0.4" height="0.5"
+    width="0.3" height="0.375"
     position="-0.35 1.4 2"
     rotation="0 180 0"
     weblink="url: 2-elevator.html">
 </a-image>
+
+  <a-text id="go"
+    visible="false"
+    value="Go visit your neighbors!"
+    line-height=55
+    align=center
+    width="2"
+    position="-0.15 1.8 2"
+    rotation="0 180 0">
+  </a-text>
 
 </a-scene>
 

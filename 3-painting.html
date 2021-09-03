@@ -9,6 +9,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="2-elevator.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
 top: 15px;
 left: 20px;
 width:100%;
@@ -22,9 +31,68 @@ z-index: 1;'>
 
   <a-assets>
   <img id="9f" src="images/direction/9f.png">
+  <img id="talk" src="images/screen/talk.png">
+  <img id="painting" src="images/painting.jpg">
 </a-assets>
 
 <script>
+AFRAME.registerComponent("hide", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      let hide = document.querySelector("#talkbutton")
+      hide.setAttribute("visible", false)
+    }, {once: true})
+  }
+})
+AFRAME.registerComponent("talk1", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      let talk1 = document.querySelector("#t2")
+      talk1.setAttribute("visible");
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t3")
+      talk1.setAttribute("visible")
+    }, 2000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t4")
+      talk1.setAttribute("visible")
+    }, 5000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t5")
+      talk1.setAttribute("visible")
+    }, 12000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t6")
+      talk1.setAttribute("visible")
+    }, 15000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t7")
+      talk1.setAttribute("visible")
+    }, 18000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t8")
+      talk1.setAttribute("visible")
+    }, 20000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t9")
+      talk1.setAttribute("visible")
+    }, 22000);
+  setTimeout(() => {
+      let talk1 = document.querySelector("#t10")
+      talk1.setAttribute("visible")
+    }, 25000);
+  setTimeout(() => {
+      let talk1 = document.querySelector("#t11")
+      talk1.setAttribute("visible")
+    }, 28000);
+  setTimeout(() => {
+      let talk1 = document.querySelector("#out")
+      talk1.setAttribute("visible")
+    }, 28000);
+    }, {once: true})
+  }
+})
+
   AFRAME.registerComponent("weblink", {
   schema: {
     url: {
@@ -40,15 +108,165 @@ z-index: 1;'>
 </script>
 
 <a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
-  <a-sky id="skyid" src="images/painting.jpg" rotation="0 0 0"></a-sky>
+  <a-sky id="skyid" src="#painting" rotation="0 0 0"></a-sky>
 
-  <a-image
-       src= "#9f"
-       width="0.5" height="0.5"
-       position="2 1.2 0.2"
-       rotation="0 -90 0"
-       weblink="url: 4-kitchen.html">
+  <a-text id="t1"
+    value="hey~ I haven't seen you for a while!
+    thought your were to abondan your masterpiece,
+    I was about to sell it yesterday."
+    color="#0080BF"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.95 2.4 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t2"
+    visible="false"
+    value="haha I would highly appreciate if it sells"
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.7 2.25 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t3"
+    visible="false"
+    value="I still keep your last piece over there to show off;
+    You must really LOVE pencil buildings"
+    color="#0080BF"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.95 2.1 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t4"
+    visible="false"
+    value="its more about the way we share our lives;
+    the building does help to make space through;
+    you can't find elsewhere such small rooms with
+    legal 'outdoor' section to bypass lockdowns;
+    my only wish is to one day share face to face
+    like what I'm drawing here on board"
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.7 1.8 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t5"
+    visible="false"
+    value="Nah, I'd rather keep behind dividers like now;
+    having people face to face is too intimidating;
+    its not like meeting online or something"
+    color="#0080BF"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.95 1.45 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t6"
+    visible="false"
+    value="haha I was born in the '00s so I don't mind,
+    I even thought of using transparent dividers when
+    my model shop is ready to share with you guys.
+    btw, whose work is that? the one with children"
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.7 1.2 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t7"
+    visible="false"
+    value="Your ghost upstairs's from yesterday"
+    color="#0080BF"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.95 1 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t8"
+    visible="false"
+    value="No way! Did he finally come to join us?
+    ...sorry but is that a he or she?"
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.7 0.9 1"
+    rotation="-15 180 0">
+  </a-text>
+
+  <a-text id="t9"
+    visible="false"
+    value="haha that was joking, I was on 9F's kitchen for
+    sushi so I didn't really know. I thought it was yours"
+    color="#0080BF"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.9 0.75 0.95"
+    rotation="-30 180 0">
+  </a-text>
+
+  <a-text id="t10"
+    visible="false"
+    value="I doubt if my upstairs even exist. The ID @13F was
+    probably a spy from Tokyo Health after us,
+    ...wait, did you say 9F got sushi in her kitchen?"
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.7 0.5 0.9"
+    rotation="-45 180 0">
+  </a-text>
+
+  <a-text id="t11"
+    visible="false"
+    value="almost gone, the whole building was in line,
+    I mean except for you and your ghost upstairs,
+    but she's open today so you can try your luck"
+    color="#0080BF"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.7 0.35 0.75"
+    rotation="-60 180 0">
+  </a-text>
+
+  <a-image id="talkbutton"
+       src= "#talk"
+       width="0.2" height="0.1"
+       position="-0.36 1.85 0.5"
+       rotation="0 180 0"
+       hide
+       talk1>
    </a-image>
+
+   <a-image id="out"
+      visible="false"
+      src= "#9f"
+      width="0.5" height="0.5"
+      position="2 1.2 0.2"
+      rotation="0 -90 0"
+      opacity=0.8
+      weblink="url: 4-kitchen.html">
+    </a-image>
 
 </a-scene>
 
