@@ -20,7 +20,23 @@ z-index: 1;'>
 </head>
 
 <body>
+  <div id="preload">
+    <p id="intro">
+        07/10/2032<br>
+        12F HOME<br>
+        Spent the whole night assembling workbench...
+    </p>
+  </div>
+
   <script>
+  window.addEventListener("load", function(){
+      setInterval(pippo, 3000);
+  });
+  function pippo(){
+      var load_screen = document.getElementById("preload");
+      document.body.removeChild(load_screen);
+  }
+
   AFRAME.registerComponent("hide", {
     init: function() {
       this.el.addEventListener("click", (e) => {
@@ -62,10 +78,6 @@ z-index: 1;'>
         let timeout = document.querySelector("#replybutton")
         timeout.setAttribute("visible")
     }, 11000);
-    setTimeout(() => {
-      let timeout = document.querySelector("#go")
-      timeout.setAttribute("visible")
-    }, 11000);
       }, {once: true})
     }
   })
@@ -89,9 +101,13 @@ z-index: 1;'>
           timeout1.setAttribute("src", "#ph9")
     }, 2000);
       setTimeout(() => {
+        let timeout = document.querySelector("#go")
+        timeout.setAttribute("visible")
+    }, 300);
+      setTimeout(() => {
         let timeout = document.querySelector("#door")
         timeout.setAttribute("visible")
-    }, 2000);
+    }, 3000);
   }, {once: true})
 }
 })
@@ -164,7 +180,7 @@ z-index: 1;'>
 
   <a-text id="go"
     visible="false"
-    value="Go visit your neighbors!"
+    value="Go visit your neighbors"
     line-height=55
     align=center
     width="2"

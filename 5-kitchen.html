@@ -1,0 +1,294 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TYO-07/12/2032</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="4-myafter.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+</head>
+
+<body>
+
+  <a-assets>
+  <img id="kitchen" src="images/kitchen.jpg">
+  <img id="12f" src="images/direction/12f.png">
+  <img id="talk" src="images/screen/talk.png">
+</a-assets>
+
+<div id="preload">
+  <p id="intro">
+      07/12/2032<br>
+      9F KITCHEN<br>
+      Haven't been here for a while...
+  </p>
+</div>
+
+<script>
+window.addEventListener("load", function(){
+    setInterval(pippo, 4000);
+});
+function pippo(){
+    var load_screen = document.getElementById("preload");
+    document.body.removeChild(load_screen);
+}
+
+AFRAME.registerComponent("hide", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      let hide = document.querySelector("#talkbutton")
+      hide.setAttribute("visible", false)
+    }, {once: true})
+  }
+})
+AFRAME.registerComponent("talk1", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      let talk1 = document.querySelector("#t2")
+      talk1.setAttribute("visible");
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t3")
+      talk1.setAttribute("visible")
+    }, 2000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t4")
+      talk1.setAttribute("visible")
+    }, 5000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t5")
+      talk1.setAttribute("visible")
+    }, 8000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t6")
+      talk1.setAttribute("visible")
+    }, 11000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t7")
+      talk1.setAttribute("visible")
+    }, 14000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t8")
+      talk1.setAttribute("visible")
+    }, 22000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t9")
+      talk1.setAttribute("visible")
+    }, 23500);
+  setTimeout(() => {
+      let talk1 = document.querySelector("#t10")
+      talk1.setAttribute("visible")
+    }, 28000);
+  setTimeout(() => {
+      let talk1 = document.querySelector("#t11")
+      talk1.setAttribute("visible")
+    }, 30000);
+  setTimeout(() => {
+      let talk1 = document.querySelector("#out")
+      talk1.setAttribute("visible")
+    }, 31000);
+    }, {once: true})
+  }
+})
+
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-sky id="skyid" src="#kitchen" rotation="0 0 0"></a-sky>
+
+  <a-text
+    value="Wow
+    that's probably the best temaki
+     I've got over these years!!"
+    line-height=55
+    align=center
+    width="1.1"
+    position="-0.5 1 -0.8"
+    rotation="0 45 0">
+  </a-text>
+
+  <a-text id="t1"
+    value="That's reserved to celebrate your model shop,
+    you know how hard to get good tuna these days"
+    color="#8C2300"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.95 2.25 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t2"
+    visible="false"
+    value="ye I was about to ask how, I mean, the fishery strike is till on, right?"
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.4 2.1 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t3"
+    visible="false"
+    value="It's something with my current job, like we never
+    know why 4F always gets midnight drone delivery"
+    color="#8C2300"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.95 1.95 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t4"
+    visible="false"
+    value="Ah I see, everyone here has some secrets,
+    its enough to know that you are the best chef!"
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.4 1.8 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t5"
+    visible="false"
+    value="Talking about secrets, I just accidently saw your
+    upstairs last night on my way down from 14F"
+    color="#8C2300"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.95 1.65 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t6"
+    visible="false"
+    value="...is that a chilling story to go with your sushi?"
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.4 1.5 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t7"
+    visible="false"
+    value="No its real! You know I always like to use stairwell
+    for some fresh air after 14F's evening tea session.
+    And there he was, smoking by his door! Luckily we
+    were more than 3m apart so we were legally fine"
+    color="#8C2300"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.95 1.3 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t8"
+    visible="false"
+    value="How was he like? Did you talk to him?"
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.4 1.1 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t9"
+    visible="false"
+    value="He's just a normal old man, said hello like old
+    people do, then walked in to clear my way down,
+    I still took the sterilized elevator for safety though"
+    color="#8C2300"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.95 0.95 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t10"
+    visible="false"
+    value="Old generation with old ways to live, so that make
+    sense why he won't join us to share his stuffs"
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.4 0.7 1"
+    rotation="-15 180 0">
+  </a-text>
+
+  <a-text id="t11"
+    visible="false"
+    value="He looked nice though, as long as he keep posting
+    his daily COVID result, we should be fine to continue doing home extension"
+    color="#8C2300"
+    line-height=55
+    align=right
+    width="1.1"
+    position="-0.8 0.55 0.9"
+    rotation="-30 180 0">
+  </a-text>
+
+  <a-image id="talkbutton"
+       src= "#talk"
+       width="0.2" height="0.1"
+       position="-0.36 1.8 0.5"
+       rotation="0 180 0"
+       hide
+       talk1>
+   </a-image>
+
+<a-image id="out"
+    visible="false"
+     src= "#12f"
+     width="0.4" height="0.5"
+     position="1.8 1.3 0.3"
+     rotation="0 -90 0"
+     opacity=0.8
+     weblink="url: 5-teahouse.html">
+ </a-image>
+
+</a-scene>
+
+</body>
+</html
