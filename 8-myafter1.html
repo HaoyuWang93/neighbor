@@ -1,0 +1,172 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TYO-07/11/2032</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="7-teahouse.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+
+</head>
+
+<body>
+
+  <script>
+  AFRAME.registerComponent("hide", {
+    init: function() {
+      this.el.addEventListener("click", (e) => {
+        let hide = document.querySelector("#abutton")
+        hide.setAttribute("visible", false)
+      }, {once: true})
+    }
+  })
+  AFRAME.registerComponent("timeout", {
+    init: function() {
+      this.el.addEventListener("click", (e) => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph031");
+        setTimeout(() => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph032")
+    }, 1500);
+        setTimeout(() => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph033")
+    }, 4500);
+        setTimeout(() => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph034")
+    }, 6000);
+        setTimeout(() => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph035")
+    }, 7500);
+        setTimeout(() => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph036")
+    }, 11000);
+        setTimeout(() => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph037")
+    }, 13000);
+        setTimeout(() => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph038")
+    }, 15000);
+        setTimeout(() => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph039")
+    }, 18000);
+        setTimeout(() => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph0310")
+    }, 22000);
+        setTimeout(() => {
+          let timeout = document.querySelector("#phone")
+          timeout.setAttribute("src", "#ph0311")
+    }, 23500);
+        setTimeout(() => {
+          let timeout = document.querySelector("#desk")
+          timeout.setAttribute("visible")
+    }, 25000);
+        setTimeout(() => {
+          let timeout = document.querySelector("#go")
+          timeout.setAttribute("visible")
+    }, 14000);
+      }, {once: true})
+    }
+  })
+
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+  <a-assets>
+  <img id="myafter1" src="images/myafter1.jpg">
+  <img id="work" src="images/work.png">
+  <img id="message2" src="images/screen/message2.png">
+  <img id="ph030" src="images/screen/ph030.png">
+  <img id="ph031" src="images/screen/ph031.png">
+  <img id="ph032" src="images/screen/ph032.png">
+  <img id="ph033" src="images/screen/ph033.png">
+  <img id="ph034" src="images/screen/ph034.png">
+  <img id="ph035" src="images/screen/ph035.png">
+  <img id="ph036" src="images/screen/ph036.png">
+  <img id="ph037" src="images/screen/ph037.png">
+  <img id="ph038" src="images/screen/ph038.png">
+  <img id="ph039" src="images/screen/ph039.png">
+  <img id="ph0310" src="images/screen/ph0310.png">
+  <img id="ph0311" src="images/screen/ph0311.png">
+</a-assets>
+
+<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-sky id="skyid" src="#myafter1" rotation="0 -90 0"></a-sky>
+
+  <a-image id="phone"
+  src= "#ph030" height="2" width="1.2"
+  position="1.5 1.2 1.5"
+  rotation="0 -135 0">
+  </a-image>
+
+  <a-image id="abutton"
+    src= "#message2"
+    height="0.8" width="0.8"
+    position="1.49 0.8 1.49"
+    rotation="0 -135 0"
+    hide
+    timeout></a-image>
+
+ <a-image id="desk"
+    visible="false"
+    src= "#work"
+    width="0.3" height="0.3"
+    position="-0.65 1.2 -1.5"
+    rotation="0 0 0"
+    weblink="url: 9-monologue.html">
+</a-image>
+
+  <a-text id="go"
+    visible="false"
+    value="Begin working by
+    9:00 UTC-5 (US EST)"
+    line-height=55
+    align=center
+    width="1.1"
+    position="-0.65 1.45 -1.5"
+    rotation="0 0 0">
+  </a-text>
+
+</a-scene>
+
+</body>
+</html

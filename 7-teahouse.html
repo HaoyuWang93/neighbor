@@ -2,11 +2,20 @@
 <!doctype html>
 <html>
 <head>
-  <title>TYO-07/10/2032</title>
+  <title>TYO-07/17/2032</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css/custom.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="6-message.html"><button class="button">PREVIOUS</button></a>
+</div>
 
 <div style='position: fixed;
 top: 15px;
@@ -22,9 +31,135 @@ z-index: 1;'>
 
   <a-assets>
   <img id="teahouse" src="images/teahouse.jpg">
+  <img id="message" src="images/screen/message.png">
+  <img id="ph020" src="images/screen/ph020.png">
+  <img id="ph021" src="images/screen/ph021.png">
+  <img id="ph022" src="images/screen/ph022.png">
+  <img id="ph023" src="images/screen/ph023.png">
+  <img id="ph024" src="images/screen/ph024.png">
+  <img id="ph025" src="images/screen/ph025.png">
+  <img id="ph026" src="images/screen/ph026.png">
+  <img id="ph027" src="images/screen/ph027.png">
+  <img id="ph028" src="images/screen/ph028.png">
+  <img id="ph029" src="images/screen/ph029.png">
+  <img id="ph0210" src="images/screen/ph0210.png">
+  <img id="ph0211" src="images/screen/ph0211.png">
+  <img id="ph0212" src="images/screen/ph0212.png">
+  <img id="ph0213" src="images/screen/ph0213.png">
+  <img id="ph0214" src="images/screen/ph0214.png">
+  <img id="ph0215" src="images/screen/ph0215.png">
+  <img id="ph0216" src="images/screen/ph0216.png">
+  <img id="ph0217" src="images/screen/ph0217.png">
+  <img id="ph0218" src="images/screen/ph0218.png">
+  <img id="12fd" src="images/direction/12fd.png">
 </a-assets>
 
+<div id="preload">
+  <p id="intro">
+      07/17/2032<br>
+      14F TEAHOUSE<br>
+      Self-service tea
+  </p>
+</div>
+
 <script>
+window.addEventListener("load", function(){
+    setInterval(pippo, 2000);
+});
+function pippo(){
+    var load_screen = document.getElementById("preload");
+    document.body.removeChild(load_screen);
+}
+
+AFRAME.registerComponent("hide", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      let hide = document.querySelector("#abutton")
+      hide.setAttribute("visible", false)
+    }, {once: true})
+  }
+})
+AFRAME.registerComponent("timeout", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+        let timeout = document.querySelector("#phone")
+        timeout.setAttribute("src", "#ph021");
+      setTimeout(() => {
+        let timeout = document.querySelector("#phone")
+        timeout.setAttribute("src", "#ph022")
+  }, 1500);
+      setTimeout(() => {
+        let timeout = document.querySelector("#phone")
+        timeout.setAttribute("src", "#ph023")
+  }, 4500);
+      setTimeout(() => {
+        let timeout = document.querySelector("#phone")
+        timeout.setAttribute("src", "#ph024")
+  }, 6000);
+      setTimeout(() => {
+        let timeout = document.querySelector("#phone")
+        timeout.setAttribute("src", "#ph025")
+  }, 7500);
+      setTimeout(() => {
+        let timeout = document.querySelector("#phone")
+        timeout.setAttribute("src", "#ph026")
+  }, 11000);
+     setTimeout(() => {
+       let timeout = document.querySelector("#phone")
+       timeout.setAttribute("src", "#ph027")
+  }, 14000);
+     setTimeout(() => {
+       let timeout = document.querySelector("#phone")
+       timeout.setAttribute("src", "#ph028")
+  }, 15500);
+    setTimeout(() => {
+      let timeout = document.querySelector("#phone")
+      timeout.setAttribute("src", "#ph029")
+  }, 17000);
+    setTimeout(() => {
+      let timeout = document.querySelector("#phone")
+      timeout.setAttribute("src", "#ph0210")
+  }, 20000);
+   setTimeout(() => {
+      let timeout = document.querySelector("#phone")
+      timeout.setAttribute("src", "#ph0211")
+  }, 22000);
+  setTimeout(() => {
+    let timeout = document.querySelector("#phone")
+    timeout.setAttribute("src", "#ph0212")
+  }, 25000);
+  setTimeout(() => {
+    let timeout = document.querySelector("#phone")
+    timeout.setAttribute("src", "#ph0213")
+  }, 26500);
+  setTimeout(() => {
+    let timeout = document.querySelector("#phone")
+    timeout.setAttribute("src", "#ph0214")
+  }, 28000);
+  setTimeout(() => {
+    let timeout = document.querySelector("#phone")
+    timeout.setAttribute("src", "#ph0215")
+  }, 32000);
+ setTimeout(() => {
+   let timeout = document.querySelector("#phone")
+   timeout.setAttribute("src", "#ph0216")
+ }, 36000);
+ setTimeout(() => {
+   let timeout = document.querySelector("#phone")
+   timeout.setAttribute("src", "#ph0217")
+ }, 40000);
+ setTimeout(() => {
+   let timeout = document.querySelector("#phone")
+   timeout.setAttribute("src", "#ph0218")
+ }, 42000);
+ setTimeout(() => {
+   let timeout = document.querySelector("#out")
+   timeout.setAttribute("visible")
+ }, 43000);
+    }, {once: true})
+  }
+})
+
   AFRAME.registerComponent("weblink", {
   schema: {
     url: {
@@ -41,6 +176,30 @@ z-index: 1;'>
 
 <a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
   <a-sky id="skyid" src="#teahouse" rotation="0 -90 0"></a-sky>
+
+  <a-image id="phone"
+  src= "#ph020" height="2" width="1.2"
+  position="-1.5 1.5 0"
+  rotation="0 90 0">
+  </a-image>
+
+  <a-image id="abutton"
+    src= "#message"
+    height="0.6" width="0.6"
+    position="-1.49 1.2 0"
+    rotation="0 90 0"
+    hide
+    timeout></a-image>
+
+  <a-image id="out"
+     visible="false"
+     src= "#12fd"
+     width="0.4" height="0.4"
+     position="-0.35 1.6 2"
+     rotation="0 180 0"
+     opacity=0.8
+     weblink="url: 8-myafter1.html">
+   </a-image>
 
 </a-scene>
 
