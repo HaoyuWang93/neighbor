@@ -1,0 +1,317 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TYO-07/12/2032</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="4-myafter.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+</head>
+
+<body>
+
+  <a-assets>
+  <img id="cafe" src="images/cafe.jpg">
+  <img id="12f" src="images/direction/12f.png">
+  <img id="talk" src="images/screen/talk.png">
+</a-assets>
+
+<div id="preload">
+  <p id="intro">
+      08/02/2032<br>
+      3F CAFE<br>
+      Coffee after weeks of intense online working
+</div>
+
+<script>
+window.addEventListener("load", function(){
+    setInterval(pippo, 3000);
+});
+function pippo(){
+    var load_screen = document.getElementById("preload");
+    document.body.removeChild(load_screen);
+}
+
+AFRAME.registerComponent("hide", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      let hide = document.querySelector("#talkbutton")
+      hide.setAttribute("visible", false)
+    }, {once: true})
+  }
+})
+AFRAME.registerComponent("talk1", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      let talk1 = document.querySelector("#t1")
+      talk1.setAttribute("visible");
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t2")
+      talk1.setAttribute("visible")
+    }, 4000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t3")
+      talk1.setAttribute("visible")
+    }, 8000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t4")
+      talk1.setAttribute("visible")
+    }, 11000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t5")
+      talk1.setAttribute("visible")
+    }, 15000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t6")
+      talk1.setAttribute("visible")
+    }, 18000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t7")
+      talk1.setAttribute("visible")
+    }, 23000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t8")
+      talk1.setAttribute("visible")
+    }, 25000);
+  setTimeout(() => {
+      let talk1 = document.querySelector("#t9")
+      talk1.setAttribute("visible")
+    }, 28000);
+  setTimeout(() => {
+      let talk1 = document.querySelector("#t10")
+      talk1.setAttribute("visible")
+    }, 30000);
+  setTimeout(() => {
+      let talk1 = document.querySelector("#t11")
+      talk1.setAttribute("visible")
+    }, 33000);
+  setTimeout(() => {
+      let talk1 = document.querySelector("#t12")
+      talk1.setAttribute("visible")
+    }, 35000);
+
+  setTimeout(() => {
+      let talk1 = document.querySelector("#out")
+      talk1.setAttribute("visible")
+    }, 36000);
+    }, {once: true})
+  }
+})
+
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-sky id="skyid" src="#cafe" rotation="0 -90 0"></a-sky>
+
+  <a-text id="t0"
+    value="I haven't seen you for weeks...
+    How do you like my new design?"
+    color="#800080"
+    line-height=55
+    align=left
+    width="1.2"
+    position="1 2.6 0.25"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t1"
+    visible="false"
+    value="I'd better pass on that...what made you remove all
+    the old wood, I mean you have the ONLY real
+    wooden furnishing of the whole building"
+    color="black"
+    line-height=55
+    align=right
+    width="1.2"
+    position="1 2.45 0.1"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t2"
+    visible="false"
+    value="There's still one piece left for contrast though, and
+    now I have the only monochrome ones of the
+    building. They all come down to styles after all."
+    color="#800080"
+    line-height=55
+    align=left
+    width="1.2"
+    position="1 2.25 0.25"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t3"
+    visible="false"
+    value="We once joked about you being a history addict
+    when you labeled where every piece came from."
+    color="black"
+    line-height=55
+    align=right
+    width="1.2"
+    position="1 2.1 0.1"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t4"
+    visible="false"
+    value="History occasionally gets fashionable, that's what
+    I'm crazy for. Talking about fashionable room
+    addict, your upstairs may have more to say"
+    color="#800080"
+    line-height=55
+    align=left
+    width="1.2"
+    position="1 1.95 0.25"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t5"
+    visible="false"
+    value="How comes? Looks like I missed a lot these days"
+    color="black"
+    line-height=55
+    align=right
+    width="1.2"
+    position="1 1.8 0.1"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t6"
+    visible="false"
+    value="You must be VR diving on Monday night...He was
+    caught flying back from outside, trying to
+    drop something big to his room through window"
+    color="#800080"
+    line-height=55
+    align=left
+    width="1.2"
+    position="1 1.6 0.25"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t7"
+    visible="false"
+    value="wait...the L4 lockdown is still on, right"
+    color="black"
+    line-height=55
+    align=right
+    width="1.2"
+    position="1 1.45 0.1"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t8"
+    visible="false"
+    value="That's the point! Tokyo Health drones went after
+    and found him positive, luckly he wasn't inside"
+    color="#800080"
+    line-height=55
+    align=left
+    width="1.2"
+    position="1 1.35 0.25"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t9"
+    visible="false"
+    value="So is he still in the quarantine station?"
+    color="black"
+    line-height=55
+    align=right
+    width="1.2"
+    position="1 1.25 0.1"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t10"
+    visible="false"
+    value="I guess so, I have to avoid 14F's teahouse and
+    your shop these days, I mean no offense..."
+    color="#800080"
+    line-height=55
+    align=left
+    width="1.2"
+    position="1 1.1 0.25"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t11"
+    visible="false"
+    value="...don't worry, I get that..."
+    color="black"
+    line-height=55
+    align=right
+    width="1.2"
+    position="1 1 0.1"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-text id="t12"
+    visible="false"
+    value="What kind of neighbor is he...
+    our home extension nearly got ruined,
+    I bet this guy never lived in a real
+    community in his life..."
+    color="#800080"
+    line-height=55
+    align=left
+    width="1.2"
+    position="1 0.8 0.25"
+    rotation="0 -90 0">
+  </a-text>
+
+  <a-image id="talkbutton"
+       src= "#talk"
+       width="0.3" height="0.15"
+       position="1 2.5 -0.1"
+       rotation="0 -90 0"
+       hide
+       talk1>
+   </a-image>
+
+<a-image id="out"
+     visible="false"
+     src= "#12f"
+     width="0.4" height="0.5"
+     position="0.3 1.8 -2.5"
+     rotation="0 0 0"
+     opacity=0.8
+     weblink="url: 12-13f.html">
+ </a-image>
+
+</a-scene>
+
+</body>
+</html

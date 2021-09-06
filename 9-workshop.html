@@ -1,0 +1,264 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TYO-07/18/2032</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="4-myafter.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+</head>
+
+<body>
+
+  <a-assets>
+  <img id="workshop" src="images/myafter2.jpg">
+  <img id="work" src="images/work.png">
+  <img id="talk" src="images/screen/talk.png">
+</a-assets>
+
+<div id="preload">
+  <p id="intro">
+      07/18/2032<br>
+      12F HOME<br>
+      Working with Sato-san<br>
+      (behind divider)
+</div>
+
+<script>
+window.addEventListener("load", function(){
+    setInterval(pippo, 500);
+});
+function pippo(){
+    var load_screen = document.getElementById("preload");
+    document.body.removeChild(load_screen);
+}
+
+AFRAME.registerComponent("hide", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      let hide = document.querySelector("#talkbutton")
+      hide.setAttribute("visible", false)
+    }, {once: true})
+  }
+})
+AFRAME.registerComponent("talk1", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      let talk1 = document.querySelector("#t1")
+      talk1.setAttribute("visible");
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t2")
+      talk1.setAttribute("visible")
+    }, 2500);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t3")
+      talk1.setAttribute("visible")
+    }, 6500);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t4")
+      talk1.setAttribute("visible")
+    }, 10500);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t5")
+      talk1.setAttribute("visible")
+    }, 20000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t6")
+      talk1.setAttribute("visible")
+    }, 28000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#t7")
+      talk1.setAttribute("visible")
+    }, 33000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#out")
+      talk1.setAttribute("visible")
+    }, 34000);
+    setTimeout(() => {
+      let talk1 = document.querySelector("#next")
+      talk1.setAttribute("visible")
+    }, 34000);
+    }, {once: true})
+  }
+})
+
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-sky id="skyid" src="#workshop" rotation="0 -90 0"></a-sky>
+
+  <a-text id="t0"
+    value="What are you working on over there, Hiroto-kun?"
+    color="#802B00"
+    line-height=55
+    align=right
+    width="1.5"
+    position="-1 2.95 -1.3"
+    rotation="0 90 0">
+  </a-text>
+
+  <a-text id="t1"
+    visible="false"
+    value="A pencil building, a future version of our ones!"
+    color="black"
+    line-height=55
+    align=left
+    width="1.4"
+    position="-1 2.85 0.15"
+    rotation="0 90 0">
+  </a-text>
+
+  <a-text id="t2"
+    visible="false"
+    value="You have a great passion on this life...do you know
+    how pencil building rised in the housing bubble?"
+    color="#802B00"
+    line-height=55
+    align=right
+    width="1.3"
+    position="-1 2.7 -1.3"
+    rotation="0 90 0">
+  </a-text>
+
+  <a-text id="t3"
+    visible="false"
+    value="I did some research, its a long story... grad it helps
+    us to remake community out of the pandemic"
+    color="black"
+    line-height=55
+    align=left
+    width="1.2"
+    position="-1 2.52 0.15"
+    rotation="0 90 0">
+  </a-text>
+
+  <a-text id="t4"
+    visible="false"
+    value="...contrary to what you guys might have thought,
+    I'm actually used to share my life with neighbors,
+    that's everyone's routine back in the Danchi
+    community where I grew up. But I don't like
+    neighbors or communities go down to trivial
+    interests while hidding everyone's truths behind.
+    The pandemic has added more than dividers..."
+    color="#802B00"
+    line-height=55
+    align=right
+    width="1.3"
+    position="-1 2.15 -1.3"
+    rotation="0 90 0">
+  </a-text>
+
+  <a-text id="t5"
+    visible="false"
+    value="As I understand, you lived in a time when work and
+    family were common languages in communities...
+    But that's not the case for today, not even before
+    the pandemic when our generation already began
+    to live more online than to physically around."
+    color="black"
+    line-height=55
+    align=left
+    width="1.2"
+    position="-1 1.7 0.15"
+    rotation="0 90 0">
+  </a-text>
+
+  <a-text id="t6"
+    visible="false"
+    value="So when you celebrate pencil building, are you
+    celebrating hobbies as the last physical tie of
+    life, even when they are cheaper than plastic?"
+    color="#802B00"
+    line-height=55
+    align=right
+    width="1.3"
+    position="-1 1.38 -1.3"
+    rotation="0 90 0">
+  </a-text>
+
+  <a-text id="t7"
+    visible="false"
+    value="That's where home extension is amazing! We leave
+    our heavy rocks online while always getting
+    fun plastics from our everyday neighbors!
+    Sato-san,
+    if you don't mind,
+    are you really making
+    that stamp for work?
+    Or is there something
+    more than that?"
+    color="black"
+    line-height=55
+    align=left
+    width="1.2"
+    position="-1 0.95 0.15"
+    rotation="0 90 0">
+  </a-text>
+
+  <a-image id="talkbutton"
+       src= "#talk"
+       width="0.4" height="0.2"
+       position="-1 2.75 0"
+       rotation="0 90 0"
+       hide
+       talk1>
+   </a-image>
+
+   <a-text id="next"
+     visible="false"
+     value="Today's 'plastic hobby' is over,
+     NYC coworker ready to connect"
+     line-height=55
+     align=center
+     width="1.5"
+     position="0 1.75 1"
+     rotation="0 180 0">
+   </a-text>
+
+<a-image id="out"
+     visible="false"
+     src= "#work"
+     width="0.4" height="0.4"
+     position="0 1.4 1"
+     rotation="0 0 0"
+     opacity=0.8
+     weblink="url: 10-roof.html">
+ </a-image>
+
+</a-scene>
+
+</body>
+</html
