@@ -24,7 +24,7 @@ z-index: 1;'>
     <p id="intro">
         07/10/2032<br>
         12F HOME<br>
-        Spent the whole night assembling workbench...
+        Spent the whole night assembling my workbench...
     </p>
   </div>
 
@@ -75,41 +75,23 @@ z-index: 1;'>
         timeout.setAttribute("src", "#ph7")
     }, 10000);
       setTimeout(() => {
-        let timeout = document.querySelector("#replybutton")
-        timeout.setAttribute("visible")
-    }, 11000);
-      }, {once: true})
-    }
-  })
-
-  AFRAME.registerComponent("hide1", {
-    init: function() {
-      this.el.addEventListener("click", (e) => {
-        let hide1 = document.querySelector("#replybutton")
-        hide1.setAttribute("visible", false)
-      }, {once: true})
-    }
-  })
-
-  AFRAME.registerComponent("timeout1", {
-    init: function() {
-      this.el.addEventListener("click", (e) => {
-          let timeout1 = document.querySelector("#phone")
-          timeout1.setAttribute("src", "#ph8");
-        setTimeout(() => {
-          let timeout1 = document.querySelector("#phone")
-          timeout1.setAttribute("src", "#ph9")
-    }, 2000);
+        let timeout = document.querySelector("#phone")
+        timeout.setAttribute("src", "#ph8")
+    }, 12000);
+      setTimeout(() => {
+        let timeout = document.querySelector("#phone")
+        timeout.setAttribute("src", "#ph9")
+    }, 13500);
       setTimeout(() => {
         let timeout = document.querySelector("#go")
         timeout.setAttribute("visible")
-    }, 300);
+    }, 14000);
       setTimeout(() => {
         let timeout = document.querySelector("#door")
         timeout.setAttribute("visible")
-    }, 3000);
-  }, {once: true})
-}
+    }, 14000);
+    }, {once: true})
+  }
 })
 
   AFRAME.registerComponent("weblink", {
@@ -130,7 +112,6 @@ z-index: 1;'>
   <img id="myspace1" src="images/1.jpg">
   <img id="exit" src="images/exit.png">
   <img id="rep" src="images/screen/rep.png">
-  <img id="re" src="images/screen/re.png">
   <img id="ph0" src="images/screen/ph0.png">
   <img id="ph1" src="images/screen/ph1.png">
   <img id="ph2" src="images/screen/ph2.png">
@@ -159,15 +140,6 @@ z-index: 1;'>
     rotation="0 45 0"
     hide
     timeout></a-image>
-
-  <a-image id="replybutton"
-    visible="false"
-    src= "#re"
-    height="0.3" width="0.6"
-    position="-1.49 0.4 -1.49"
-    rotation="0 45 0"
-    hide1
-    timeout1></a-image>
 
  <a-image id="door"
     visible="false"

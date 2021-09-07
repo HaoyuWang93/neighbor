@@ -1,0 +1,98 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TYO-07/10/2032</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="9-workshop.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+</head>
+
+<body>
+
+  <a-assets>
+  <img id="rooftop" src="images/rooftop.jpg">
+  <img id="12fd1" src="images/direction/12fd1.png">
+</a-assets>
+
+<div id="preload">
+  <p id="intro">
+      07/21/2032<br>
+      ROOF DECK<br>
+      Late night beer and pizza<br>
+      (behind divider)
+</div>
+
+<script>
+window.addEventListener("load", function(){
+    setInterval(pippo, 2000);
+});
+function pippo(){
+    var load_screen = document.getElementById("preload");
+    document.body.removeChild(load_screen);
+}
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-sky id="skyid" src="#rooftop" rotation="0 0 0"></a-sky>
+
+ <a-image
+      src= "#12fd1"
+      width="0.3" height="0.3"
+      position="0.95 1.5 -0.8"
+      rotation="0 0 0"
+      opacity=0.8
+      weblink="url: 11-monologue.html">
+  </a-image>
+
+  <a-text
+    value="...8F said those carbon-fab printers can add new
+    floors to pencil buildings for the market demand;
+    we imagined this way to make our home extension
+    an inclusive city, like the digital ones we explored;
+
+    but are these neighbors nothing more than labels?
+    like the physical signs of the 80s' pencil buildings?"
+    line-height=55
+    align=center
+    width="1.8"
+    position="-0.4 3.5 -0.15"
+    rotation="90 0 0">
+  </a-text>
+
+</a-scene>
+
+</body>
+</html
