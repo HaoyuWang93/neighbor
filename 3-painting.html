@@ -19,7 +19,7 @@ z-index: 1;'>
 
 <div style='position: fixed;
   bottom: 15px;
-  left: 130px;
+  left: 120px;
   width:100%;
   text-align: left;
   z-index: 1;'>
@@ -67,37 +67,41 @@ AFRAME.registerComponent("talk1", {
       talk1.setAttribute("visible")
     }, 6000);
     setTimeout(() => {
+      let talk1 = document.querySelector("#t4-1")
+      talk1.setAttribute("visible")
+    }, 10000);
+    setTimeout(() => {
       let talk1 = document.querySelector("#t5")
       talk1.setAttribute("visible")
-    }, 14000);
+    }, 17000);
     setTimeout(() => {
       let talk1 = document.querySelector("#t6")
       talk1.setAttribute("visible")
-    }, 19000);
+    }, 23000);
     setTimeout(() => {
       let talk1 = document.querySelector("#t7")
       talk1.setAttribute("visible")
-    }, 25000);
+    }, 30000);
     setTimeout(() => {
       let talk1 = document.querySelector("#t8")
       talk1.setAttribute("visible")
-    }, 28000);
+    }, 32500);
     setTimeout(() => {
       let talk1 = document.querySelector("#t9")
       talk1.setAttribute("visible")
-    }, 31000);
+    }, 36000);
   setTimeout(() => {
       let talk1 = document.querySelector("#t10")
       talk1.setAttribute("visible")
-    }, 34000);
+    }, 39000);
   setTimeout(() => {
       let talk1 = document.querySelector("#t11")
       talk1.setAttribute("visible")
-    }, 37000);
+    }, 42000);
   setTimeout(() => {
       let talk1 = document.querySelector("#out")
       talk1.setAttribute("visible")
-    }, 38000);
+    }, 43000);
     }, {once: true})
   }
 })
@@ -156,18 +160,28 @@ AFRAME.registerComponent("talk1", {
 
   <a-text id="t4"
     visible="false"
-    value="its more about how we manage to make common
-    rooms out of lockdowns, not only for COVID ones
-    but the 15m2 cells that we can afford. Not every
-    pencil building has such a good community to
-    make this possible, whether they have legal
-    'open-air' section or not. My only wish is to one day
-    go face to face like what I'm drawing here..."
+    value="its more about how we manage to escape from
+    the lockdowns, not only for COVID ones but the
+    15sqm cells that we can only afford here."
     color="black"
     line-height=55
     align=left
     width="1.1"
-    position="0.7 1.8 1"
+    position="0.7 1.92 1"
+    rotation="0 180 0">
+  </a-text>
+
+  <a-text id="t4-1"
+    visible="false"
+    value="Not every pencil building has such a good
+    community to make this possible, whether they
+    have legal 'open-air' section or not. My only wish is
+    to one day go face to face like what I'm drawing here..."
+    color="black"
+    line-height=55
+    align=left
+    width="1.1"
+    position="0.7 1.65 1"
     rotation="0 180 0">
   </a-text>
 
@@ -185,10 +199,10 @@ AFRAME.registerComponent("talk1", {
   </a-text>
 
   <a-text id="t6"
-
-    value="haha I was born in the '00s so I don't mind,
+    visible="false"
+    value="I was born in the '00s so I don't mind,
     I even thought of using transparent dividers when
-    my model shop is ready to share...
+    my model shop is ready to share with you guys...
     btw, whose work is that? the one with children"
     color="black"
     line-height=55
