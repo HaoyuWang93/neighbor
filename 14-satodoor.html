@@ -1,0 +1,77 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TYO-07/10/2032</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="13-elevator.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+</head>
+
+<body>
+
+  <a-assets>
+  <img id="elevator" src="images/elevator2.jpg">
+  <img id="pass" src="images/direction/passcode.png">
+</a-assets>
+
+<script>
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-sky id="skyid" src="#elevator" rotation="0 180 0"></a-sky>
+
+ <a-image
+      src= "#pass"
+      width="0.2" height="0.2"
+      position="0.5 1.5 -0.1"
+      rotation="0 -90 0"
+      weblink="url: 15-sato.html">
+  </a-image>
+
+  <a-text
+    value="Feeling strange to step on my next-floor
+    for the first time over the years"
+    color=black
+    line-height=55
+    align=center
+    width="1.8"
+    position="0 0 0"
+    rotation="-90 0 0">
+  </a-text>
+
+</a-scene>
+
+</body>
+</html

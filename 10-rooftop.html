@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>TYO-07/10/2032</title>
+  <title>TYO-07/21/2032</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css/custom.css">
@@ -15,6 +15,15 @@ width:100%;
 text-align: left;
 z-index: 1;'>
   <a href="9-workshop.html"><button class="button">PREVIOUS</button></a>
+</div>
+
+<div style='position: fixed;
+  bottom: 15px;
+  left: 130px;
+  width:100%;
+  text-align: left;
+  z-index: 1;'>
+    <a href="11-monologue.html"><button class="button">SKIP</button></a>
 </div>
 
 <div style='position: fixed;
@@ -31,6 +40,9 @@ z-index: 1;'>
 
   <a-assets>
   <img id="rooftop" src="images/rooftop.jpg">
+  <img id="email" src="images/screen/email-sato.png">
+  <img id="email0" src="images/screen/email0.png">
+  <img id="email1" src="images/screen/email1.png">
   <img id="12fd1" src="images/direction/12fd1.png">
 </a-assets>
 
@@ -39,7 +51,7 @@ z-index: 1;'>
       07/21/2032<br>
       ROOF DECK<br>
       Late night beer and pizza<br>
-      (behind divider)
+      (took so long to reserve my hour)
 </div>
 
 <script>
@@ -50,6 +62,27 @@ function pippo(){
     var load_screen = document.getElementById("preload");
     document.body.removeChild(load_screen);
 }
+
+AFRAME.registerComponent("hide", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      let hide = document.querySelector("#abutton")
+      hide.setAttribute("visible", false)
+    }, {once: true})
+  }
+})
+AFRAME.registerComponent("timeout", {
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+        let timeout = document.querySelector("#phone")
+        timeout.setAttribute("src", "#email1");
+        setTimeout(() => {
+          let timeout = document.querySelector("#go")
+          timeout.setAttribute("visible")
+    }, 2000);
+    }, {once: true})
+  }
+})
 
   AFRAME.registerComponent("weblink", {
   schema: {
@@ -68,7 +101,8 @@ function pippo(){
 <a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
   <a-sky id="skyid" src="#rooftop" rotation="0 0 0"></a-sky>
 
- <a-image
+ <a-image id="go"
+      visible="false"
       src= "#12fd1"
       width="0.3" height="0.3"
       position="0.95 1.5 -0.8"
@@ -77,18 +111,34 @@ function pippo(){
       weblink="url: 11-monologue.html">
   </a-image>
 
+  <a-image id="phone"
+  src= "#email0" height="2" width="1.2"
+  position="-2 1.2 0"
+  rotation="0 90 0">
+  </a-image>
+
+  <a-image id="abutton"
+    src= "#email"
+    height="0.8" width="0.8"
+    position="-1.95 1.2 0"
+    rotation="0 90 0"
+    hide
+    timeout></a-image>
+
   <a-text
-    value="...8F said those carbon-fab printers can add new
-    floors to pencil buildings for the market demand;
+    value="...8F said those carbon-fab printers can infinitely
+    top up pencil buildings with new floors for market;
     we imagined this way to make our home extension
     an inclusive city, like the digital ones we explored;
 
-    but are these neighbors nothing more than labels?
-    like the physical signs of the 80s' pencil buildings?"
+    But does it matter who my new neighbors will be?
+
+    Did I dare to picture 8F when we toasted across
+    the divider for the future of our community?"
     line-height=55
     align=center
     width="1.8"
-    position="-0.4 3.5 -0.15"
+    position="-0.4 3.5 -0.2"
     rotation="90 0 0">
   </a-text>
 

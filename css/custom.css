@@ -184,6 +184,7 @@ margin-left:25%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    max-height:70%;
 }
 
 @media screen and (max-width: 600px) {
@@ -200,8 +201,7 @@ margin-left:25%;
     font-size: 1em;
   }
   .video {
-    top: 45%;
-    width:auto; height: 70%;
+    width:100%; height: auto;
   }
 
 /* hidden ar button */
