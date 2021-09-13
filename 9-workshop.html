@@ -113,7 +113,7 @@ AFRAME.registerComponent("talk1", {
     setTimeout(() => {
       let talk1 = document.querySelector("#next")
       talk1.setAttribute("visible")
-    }, 52000);
+    }, 51000);
     }, {once: true})
   }
 })
@@ -267,6 +267,7 @@ AFRAME.registerComponent("talk1", {
 
   <a-image id="talkbutton"
        src= "#talk"
+       animation="property: opacity; from: 1; to: 0.3; dur: 500; dir: alternate; loop: true"
        width="0.4" height="0.2"
        position="-1 2.75 0"
        rotation="0 90 0"
@@ -288,6 +289,7 @@ AFRAME.registerComponent("talk1", {
 <a-image id="out"
      visible="false"
      src= "#work"
+     animation="property: opacity; from: 1; to: 0.3; dur: 500; dir: alternate; loop: true"
      width="0.4" height="0.4"
      position="0 1.4 1"
      rotation="0 0 0"
