@@ -6,6 +6,22 @@ body {
     background: black;
 }
 
+/* A-FRAME */
+.clickable {
+  -moz-user-select: all;
+  -webkit-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+.a-enter-ar-button {
+  visibility: hidden;
+}
+
+div.a-enter-ar {
+  visibility: hidden;
+}
+
 #preload {
     position: fixed;
     left: 0;
@@ -189,7 +205,7 @@ margin-left:25%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   line-height: 1.5;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: white;
   font-style: italic;
   text-align: center;
@@ -215,7 +231,7 @@ margin-left:25%;
     font-size: 1.2em;
   }
   #video-sub {
-    font-size: 1.2em;
+    font-size: 1em;
   }
   #chat-fr {
     font-size: 1.2em;
@@ -235,7 +251,7 @@ margin-left:25%;
       font-size: 1em;
     }
     #video-sub {
-      font-size: 1em;
+      font-size: 0.9em;
     }
     #chat-fr {
       font-size: 1em;
