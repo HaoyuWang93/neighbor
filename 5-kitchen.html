@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TYO-07/12/2032</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -37,12 +38,6 @@ z-index: 1;'>
 </head>
 
 <body>
-
-  <a-assets>
-  <img id="kitchen" src="images/kitchen.jpg">
-  <img id="12f" src="images/direction/12f.png">
-  <img id="talk" src="images/screen/talk.png">
-</a-assets>
 
 <div id="preload">
   <p id="intro">
@@ -133,7 +128,15 @@ AFRAME.registerComponent("talk1", {
 })
 </script>
 
-<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
+<a-assets>
+<img id="kitchen" src="images/kitchen.jpg">
+<img id="12f" src="images/direction/12f.png">
+<img id="talk" src="images/screen/talk.png">
+</a-assets>
+
   <a-sky id="skyid" src="#kitchen" rotation="0 0 0"></a-sky>
 
   <a-text
@@ -144,7 +147,8 @@ AFRAME.registerComponent("talk1", {
     align=center
     width="1.1"
     position="-0.5 1 -0.8"
-    rotation="0 45 0">
+    rotation="0 45 0"
+    animation="property: opacity; from: 1; to: 0.25; dur: 1000; dir: alternate; loop: true">
   </a-text>
 
   <a-text id="t1"

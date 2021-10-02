@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TYO-08/09/2032</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -29,11 +30,6 @@ z-index: 1;'>
 
 <body>
 
-  <a-assets>
-  <img id="sato" src="images/last.jpg">
-  <img id="try" src="images/direction/try.png">
-</a-assets>
-
 <script>
   AFRAME.registerComponent("weblink", {
   schema: {
@@ -49,7 +45,14 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
+<a-assets>
+<img id="sato" src="images/last.jpg">
+<img id="try" src="images/direction/try.png">
+</a-assets>
+
   <a-sky id="skyid" src="#sato" rotation="0 -90 0"></a-sky>
 
  <a-image

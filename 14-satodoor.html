@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TYO-07/10/2032</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -29,12 +30,6 @@ z-index: 1;'>
 
 <body>
 
-  <a-assets>
-  <img id="elevator" src="images/elevator2.jpg">
-  <img id="pass" src="images/direction/passcode.png">
-  <img id="registration" src="images/registration.jpg">
-</a-assets>
-
 <script>
   AFRAME.registerComponent("weblink", {
   schema: {
@@ -50,7 +45,15 @@ z-index: 1;'>
 })
 </script>
 
-<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
+<a-assets>
+<img id="elevator" src="images/elevator2.jpg">
+<img id="pass" src="images/direction/passcode.png">
+<img id="registration" src="images/registration.jpg">
+</a-assets>
+
   <a-sky id="skyid" src="#elevator" rotation="0 180 0"></a-sky>
 
  <a-image

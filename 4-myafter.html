@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TYO-07/11/2032</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -123,22 +124,24 @@ z-index: 1;'>
 })
 </script>
 
-  <a-assets>
-  <img id="myafter" src="images/myafter.jpg">
-  <img id="sleep" src="images/direction/sleep.png">
-  <img id="announce" src="images/screen/announce.png">
-  <img id="ph1-0" src="images/screen/ph1-0.png">
-  <img id="ph1-1" src="images/screen/ph1-1.png">
-  <img id="ph1-2" src="images/screen/ph1-2.png">
-  <img id="ph1-3" src="images/screen/ph1-3.png">
-  <img id="ph1-4" src="images/screen/ph1-4.png">
-  <img id="ph1-5" src="images/screen/ph1-5.png">
-  <img id="ph1-6" src="images/screen/ph1-6.png">
-  <img id="ph1-7" src="images/screen/ph1-7.png">
-  <img id="ph1-8" src="images/screen/ph1-8.png">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
+<a-assets>
+<img id="myafter" src="images/myafter.jpg">
+<img id="sleep" src="images/direction/sleep.png">
+<img id="announce" src="images/screen/announce.png">
+<img id="ph1-0" src="images/screen/ph1-0.png">
+<img id="ph1-1" src="images/screen/ph1-1.png">
+<img id="ph1-2" src="images/screen/ph1-2.png">
+<img id="ph1-3" src="images/screen/ph1-3.png">
+<img id="ph1-4" src="images/screen/ph1-4.png">
+<img id="ph1-5" src="images/screen/ph1-5.png">
+<img id="ph1-6" src="images/screen/ph1-6.png">
+<img id="ph1-7" src="images/screen/ph1-7.png">
+<img id="ph1-8" src="images/screen/ph1-8.png">
 </a-assets>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
   <a-sky id="skyid" src="#myafter" rotation="0 -90 0"></a-sky>
 
   <a-image id="phone"

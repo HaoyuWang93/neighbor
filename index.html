@@ -117,6 +117,9 @@ z-index: 1;'>
 })
 </script>
 
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
   <a-assets>
   <img id="myspace1" src="images/1.jpg">
   <img id="exit" src="images/direction/exit.png">
@@ -133,7 +136,6 @@ z-index: 1;'>
   <img id="ph9" src="images/screen/ph9.png">
 </a-assets>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
   <a-sky id="skyid" src="#myspace1" rotation="0 -90 0"></a-sky>
 
   <a-image id="phone"

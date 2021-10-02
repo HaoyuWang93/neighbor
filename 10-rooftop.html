@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TYO-07/21/2032</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -37,14 +38,6 @@ z-index: 1;'>
 </head>
 
 <body>
-
-  <a-assets>
-  <img id="rooftop" src="images/rooftop.jpg">
-  <img id="email" src="images/screen/email-sato.png">
-  <img id="email0" src="images/screen/email0.png">
-  <img id="email1" src="images/screen/email1.png">
-  <img id="12fd1" src="images/direction/12fd1.png">
-</a-assets>
 
 <div id="preload">
   <p id="intro">
@@ -98,7 +91,17 @@ AFRAME.registerComponent("timeout", {
 })
 </script>
 
-<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
+<a-assets>
+<img id="rooftop" src="images/rooftop.jpg">
+<img id="email" src="images/screen/email-sato.png">
+<img id="email0" src="images/screen/email0.png">
+<img id="email1" src="images/screen/email1.png">
+<img id="12fd1" src="images/direction/12fd1.png">
+</a-assets>
+
   <a-sky id="skyid" src="#rooftop" rotation="0 0 0"></a-sky>
 
  <a-image id="go"
@@ -141,7 +144,8 @@ AFRAME.registerComponent("timeout", {
     align=center
     width="1.8"
     position="-0.4 3.5 -0.3"
-    rotation="90 0 0">
+    rotation="90 0 0"
+    animation="property: opacity; from: 1; to: 0.25; dur: 1000; dir: alternate; loop: true">
   </a-text>
 
 </a-scene>

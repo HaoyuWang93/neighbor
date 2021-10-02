@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TYO-07/18/2032</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -37,12 +38,6 @@ z-index: 1;'>
 </head>
 
 <body>
-
-  <a-assets>
-  <img id="workshop" src="images/myafter2.jpg">
-  <img id="work" src="images/direction/work.png">
-  <img id="talk" src="images/screen/talk.png">
-</a-assets>
 
 <div id="preload">
   <p id="intro">
@@ -133,7 +128,15 @@ AFRAME.registerComponent("talk1", {
 })
 </script>
 
-<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
+<a-assets>
+<img id="workshop" src="images/myafter2.jpg">
+<img id="work" src="images/direction/work.png">
+<img id="talk" src="images/screen/talk.png">
+</a-assets>
+
   <a-sky id="skyid" src="#workshop" rotation="0 -90 0"></a-sky>
 
   <a-text id="t0"

@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TYO-07/17/2032</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -37,31 +38,6 @@ z-index: 1;'>
 </head>
 
 <body>
-
-  <a-assets>
-  <img id="teahouse" src="images/teahouse.jpg">
-  <img id="message" src="images/screen/message.png">
-  <img id="ph020" src="images/screen/ph020.png">
-  <img id="ph021" src="images/screen/ph021.png">
-  <img id="ph022" src="images/screen/ph022.png">
-  <img id="ph023" src="images/screen/ph023.png">
-  <img id="ph024" src="images/screen/ph024.png">
-  <img id="ph025" src="images/screen/ph025.png">
-  <img id="ph026" src="images/screen/ph026.png">
-  <img id="ph027" src="images/screen/ph027.png">
-  <img id="ph028" src="images/screen/ph028.png">
-  <img id="ph029" src="images/screen/ph029.png">
-  <img id="ph0210" src="images/screen/ph0210.png">
-  <img id="ph0211" src="images/screen/ph0211.png">
-  <img id="ph0212" src="images/screen/ph0212.png">
-  <img id="ph0213" src="images/screen/ph0213.png">
-  <img id="ph0214" src="images/screen/ph0214.png">
-  <img id="ph0215" src="images/screen/ph0215.png">
-  <img id="ph0216" src="images/screen/ph0216.png">
-  <img id="ph0217" src="images/screen/ph0217.png">
-  <img id="ph0218" src="images/screen/ph0218.png">
-  <img id="12fd" src="images/direction/12fd.png">
-</a-assets>
 
 <div id="preload">
   <p id="intro">
@@ -183,7 +159,34 @@ AFRAME.registerComponent("timeout", {
 })
 </script>
 
-<a-scene  cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
+<a-assets>
+<img id="teahouse" src="images/teahouse.jpg">
+<img id="message" src="images/screen/message.png">
+<img id="ph020" src="images/screen/ph020.png">
+<img id="ph021" src="images/screen/ph021.png">
+<img id="ph022" src="images/screen/ph022.png">
+<img id="ph023" src="images/screen/ph023.png">
+<img id="ph024" src="images/screen/ph024.png">
+<img id="ph025" src="images/screen/ph025.png">
+<img id="ph026" src="images/screen/ph026.png">
+<img id="ph027" src="images/screen/ph027.png">
+<img id="ph028" src="images/screen/ph028.png">
+<img id="ph029" src="images/screen/ph029.png">
+<img id="ph0210" src="images/screen/ph0210.png">
+<img id="ph0211" src="images/screen/ph0211.png">
+<img id="ph0212" src="images/screen/ph0212.png">
+<img id="ph0213" src="images/screen/ph0213.png">
+<img id="ph0214" src="images/screen/ph0214.png">
+<img id="ph0215" src="images/screen/ph0215.png">
+<img id="ph0216" src="images/screen/ph0216.png">
+<img id="ph0217" src="images/screen/ph0217.png">
+<img id="ph0218" src="images/screen/ph0218.png">
+<img id="12fd" src="images/direction/12fd.png">
+</a-assets>
+
   <a-sky id="skyid" src="#teahouse" rotation="0 -90 0"></a-sky>
 
   <a-image id="phone"

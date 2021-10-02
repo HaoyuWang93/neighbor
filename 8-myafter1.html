@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>TYO-07/17/2032</title>
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -120,25 +121,27 @@ z-index: 1;'>
 })
 </script>
 
-  <a-assets>
-  <img id="myafter1" src="images/myafter1.jpg">
-  <img id="work" src="images/direction/work.png">
-  <img id="message2" src="images/screen/message2.png">
-  <img id="ph030" src="images/screen/ph030.png">
-  <img id="ph031" src="images/screen/ph031.png">
-  <img id="ph032" src="images/screen/ph032.png">
-  <img id="ph033" src="images/screen/ph033.png">
-  <img id="ph034" src="images/screen/ph034.png">
-  <img id="ph035" src="images/screen/ph035.png">
-  <img id="ph036" src="images/screen/ph036.png">
-  <img id="ph037" src="images/screen/ph037.png">
-  <img id="ph038" src="images/screen/ph038.png">
-  <img id="ph039" src="images/screen/ph039.png">
-  <img id="ph0310" src="images/screen/ph0310.png">
-  <img id="ph0311" src="images/screen/ph0311.png">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
+<a-assets>
+<img id="myafter1" src="images/myafter1.jpg">
+<img id="work" src="images/direction/work.png">
+<img id="message2" src="images/screen/message2.png">
+<img id="ph030" src="images/screen/ph030.png">
+<img id="ph031" src="images/screen/ph031.png">
+<img id="ph032" src="images/screen/ph032.png">
+<img id="ph033" src="images/screen/ph033.png">
+<img id="ph034" src="images/screen/ph034.png">
+<img id="ph035" src="images/screen/ph035.png">
+<img id="ph036" src="images/screen/ph036.png">
+<img id="ph037" src="images/screen/ph037.png">
+<img id="ph038" src="images/screen/ph038.png">
+<img id="ph039" src="images/screen/ph039.png">
+<img id="ph0310" src="images/screen/ph0310.png">
+<img id="ph0311" src="images/screen/ph0311.png">
 </a-assets>
 
-<a-scene cursor="rayOrigin: mouse" vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
   <a-sky id="skyid" src="#myafter1" rotation="0 -90 0"></a-sky>
 
   <a-image id="phone"
