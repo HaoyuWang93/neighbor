@@ -48,79 +48,52 @@ z-index: 1;'>
 
 <script>
 window.addEventListener("load", function(){
-    setInterval(pippo, 2000);
+    setInterval(pippo, 3000);
 });
 function pippo(){
     var load_screen = document.getElementById("preload");
     document.body.removeChild(load_screen);
 }
 
-AFRAME.registerComponent("hide", {
+AFRAME.registerComponent("talk0", {
   init: function() {
-    this.el.addEventListener("click", (e) => {
-      let hide = document.querySelector("#talkbutton")
-      hide.setAttribute("visible", false)
-    }, {once: true})
-  }
-})
-AFRAME.registerComponent("talk1", {
-  init: function() {
-    this.el.addEventListener("click", (e) => {
-      let talk1 = document.querySelector("#t1")
-      talk1.setAttribute("visible");
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t2")
-      talk1.setAttribute("visible")
-    }, 5000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t3")
-      talk1.setAttribute("visible")
-    }, 10000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t4")
-      talk1.setAttribute("visible")
-    }, 14000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t5")
-      talk1.setAttribute("visible")
-    }, 20000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t6")
-      talk1.setAttribute("visible")
-    }, 23000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t7")
-      talk1.setAttribute("visible")
-    }, 28000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t8")
-      talk1.setAttribute("visible")
-    }, 31000);
-  setTimeout(() => {
-      let talk1 = document.querySelector("#t9")
-      talk1.setAttribute("visible")
-    }, 35000);
-  setTimeout(() => {
-      let talk1 = document.querySelector("#t10")
-      talk1.setAttribute("visible")
-    }, 37000);
-  setTimeout(() => {
-      let talk1 = document.querySelector("#t11")
-      talk1.setAttribute("visible")
-    }, 40000);
-  setTimeout(() => {
-      let talk1 = document.querySelector("#t12")
-      talk1.setAttribute("visible")
-    }, 43000);
-
-  setTimeout(() => {
-      let talk1 = document.querySelector("#out")
-      talk1.setAttribute("visible")
-    }, 44000);
-    }, {once: true})
-  }
+     var pieces = document.querySelectorAll(".chat, .clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show0")}
+     }, {once: true})
+   }
 })
 
+AFRAME.registerComponent("proc1", {
+  init: function() {
+    var pieces = document.querySelectorAll(".chat, .clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show1")}
+     }, {once: true})
+   }
+})
+
+AFRAME.registerComponent("proc2", {
+  init: function() {
+    var pieces = document.querySelectorAll(".chat, .clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show2")}
+     }, {once: true})
+   }
+})
+
+AFRAME.registerComponent("proc3", {
+  init: function() {
+     var pieces = document.querySelectorAll(".chat, .clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show3")}
+     }, {once: true})
+   }
+})
 
   AFRAME.registerComponent("weblink", {
   schema: {
@@ -143,185 +116,137 @@ loading-screen="dotsColor: white; backgroundColor: black">
 <img id="cafe" src="images/cafe.jpg">
 <img id="13f" src="images/direction/13f.png">
 <img id="talk" src="images/screen/talk.png">
+<img id="proceed" src="images/screen/proceed.png" alt="">
 </a-assets>
 
   <a-sky id="skyid" src="#cafe" rotation="0 -90 0"></a-sky>
 
-  <a-text id="t0"
+  <a-text class="chat"
     value="...I guess the typhoon is leaving...
     Anyway, how do you like my new design?"
-    color="#800080"
-    line-height=55
-    align=left
-    width="1.2"
-    position="1 2.6 0.25"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t1"
-    visible="false"
-    value="I'd better pass on that...what made you remove all
-    your old wood, I mean you had the ONLY real
-    wooden furnishing of the whole building"
-    color="black"
-    line-height=55
-    align=right
-    width="1.2"
-    position="1 2.45 0.1"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t2"
-    visible="false"
-    value="There's still one piece left for contrast though, and
-    now I have the only monochrome room of the
-    building. They all come down to styles after all."
-    color="#800080"
-    line-height=55
-    align=left
-    width="1.2"
-    position="1 2.25 0.25"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t3"
-    visible="false"
-    value="We had a meme about you being a history addict
-    when you labeled where every piece came from."
-    color="black"
-    line-height=55
-    align=right
-    width="1.2"
-    position="1 2.1 0.1"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t4"
-    visible="false"
-    value="History occasionally gets fashionable, that's what
-    I was aiming for... Talking about furnishing
-    addict, your upstairs may have more to say"
-    color="#800080"
-    line-height=55
-    align=left
-    width="1.2"
-    position="1 1.95 0.25"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t5"
-    visible="false"
-    value="How comes? Looks like I missed a lot these days"
-    color="black"
-    line-height=55
-    align=right
-    width="1.2"
-    position="1 1.8 0.1"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t6"
-    visible="false"
-    value="You must have stuck in VR on Monday...He's
-    caught flying back from outside, trying to drop
-    something big to his room through window"
-    color="#800080"
-    line-height=55
-    align=left
-    width="1.2"
-    position="1 1.6 0.25"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t7"
-    visible="false"
-    value="wait...the L4 lockdown is still on, right"
-    color="black"
-    line-height=55
-    align=right
-    width="1.2"
-    position="1 1.45 0.1"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t8"
-    visible="false"
-    value="That's the point! Tokyo Health drones came after
-    and found him positive, luckly he wasn't inside"
-    color="#800080"
-    line-height=55
-    align=left
-    width="1.2"
-    position="1 1.35 0.25"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t9"
-    visible="false"
-    value="So is he still in the quarantine station?"
-    color="black"
-    line-height=55
-    align=right
-    width="1.2"
-    position="1 1.25 0.1"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t10"
-    visible="false"
-    value="I guess so, I have to avoid 14F's teahouse and
-    your shop these days, I mean no offense..."
-    color="#800080"
-    line-height=55
-    align=left
-    width="1.2"
-    position="1 1.1 0.25"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t11"
-    visible="false"
-    value="...don't worry, I get that..."
-    color="black"
-    line-height=55
-    align=right
-    width="1.2"
-    position="1 1 0.1"
-    rotation="0 -90 0">
-  </a-text>
-
-  <a-text id="t12"
-    visible="false"
-    value="What kind of neighbor is he...
-    we may have been marked by the department!
-    He seems never lived with other people before
-    so didn't know how community works..."
-    color="#800080"
-    line-height=55
-    align=left
-    width="1.2"
-    position="1 0.8 0.25"
-    rotation="0 -90 0">
+    color="#800080" line-height=55 align=left
+    width="1.1" rotation="0 -90 0" position="1 1.65 0.25"
+    animation__hide1="startEvents: show1; property: visible; to: false">
   </a-text>
 
   <a-image id="talkbutton" class="clickable"
-       src= "#talk"
-       animation="property: opacity; from: 1; to: 0.3; dur: 500; dir: alternate; loop: true"
-       width="0.3" height="0.15"
-       position="1 2.5 -0.1"
-       rotation="0 -90 0"
-       hide
-       talk1>
+    src= "#talk" rotation="0 -90 0" width="0.3" height="0.15" position="1 1.5 -0.1"
+    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+    animation__off0="startEvents: show0; property: scale; to: 0 0 0; dur: 100"
+    talk0>
    </a-image>
 
-<a-image id="out" class="clickable"
-     visible="false"
-     src= "#13f"
-     animation="property: opacity; from: 1; to: 0.3; dur: 500; dir: alternate; loop: true"
-     width="0.4" height="0.4"
-     position="0.3 1.8 -2.5"
-     rotation="0 0 0"
-     opacity=0.8
+  <a-text class="chat" opacity="0"
+    value="I'd better pass on that...what made you remove all
+    your old wood, I mean you had the ONLY real
+    wooden furnishing of the whole building"
+    color="black" line-height=55 align=right
+    width="1.1" rotation="0 -90 0" position="1 1.5 0.1"
+    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500"
+    animation__hide1="startEvents: show1; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat" opacity="0"
+    value="There's still one piece left for contrast though,
+    and now I have the only monochromatic room of
+    the building...maybe of the whole city as everyone
+    follows Tokyo Health's mental health guides..."
+    color="#800080" line-height=55 align=left
+    width="1.1" rotation="0 -90 0" position="1 1.4 0.25"
+    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500; delay: 5000"
+    animation__hide1="startEvents: show1; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat" opacity="0"
+    value="Talking about furnishing addicts,
+    your upstairs may have more to say"
+    color="#800080" line-height=55 align=left
+    width="1.1" rotation="0 -90 0" position="1 1.15 0.25"
+    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500; delay: 9000"
+    animation__hide1="startEvents: show1; property: visible; to: false">
+  </a-text>
+
+  <a-image id="proc1" class="clickable" scale="0 0 0"
+    src= "#proceed" rotation="0 -90 0" width="0.3" height="0.15" position="1 1.3 -0.1"
+    animation__on0="startEvents: show0; property: scale; to: 1 1 1; dur: 100; delay: 10000"
+    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+    animation__off1="startEvents: show1; property: scale; to: 0 0 0; dur: 100"
+    proc1>
+   </a-image>
+
+   <a-text class="chat" opacity="0"
+     value="How comes? I was stuck in VR for work
+     and seems like I missed a lot"
+     color="black" line-height=55 align=right
+     width="1.1" rotation="0 -90 0" position="1 1.5 0.1"
+     animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500"
+     animation__hide2="startEvents: show2; property: visible; to: false">
+   </a-text>
+
+   <a-text class="chat" opacity="0"
+     value="He's caught flying back from outside on Monday,
+     trying to drop something big to his room
+     through window"
+     color="#800080" line-height=55 align=left
+     width="1.1" rotation="0 -90 0" position="1 1.5 0.25"
+     animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500; delay: 3000"
+     animation__hide2="startEvents: show2; property: visible; to: false">
+   </a-text>
+
+   <a-text class="chat" opacity="0"
+     value="...don't know how he got the vehicle in an
+     L4 lockdown but the Tokyo Health drones came
+     after and found him positive as expected"
+     color="#800080" line-height=55 align=left
+     width="1.1" rotation="0 -90 0" position="1 1.3 0.25"
+     animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500; delay: 3000"
+     animation__hide2="startEvents: show2; property: visible; to: false">
+   </a-text>
+
+   <a-image id="proc2" class="clickable" scale="0 0 0"
+     src= "#proceed" rotation="0 -90 0" width="0.3" height="0.15" position="1 1.3 -0.1"
+     animation__on1="startEvents: show1; property: scale; to: 1 1 1; dur: 100; delay: 4000"
+     animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+     animation__off2="startEvents: show2; property: scale; to: 0 0 0; dur: 100"
+     proc2>
+    </a-image>
+
+    <a-text class="chat" opacity="0"
+      value="wait...he wasn't caught inside, right?"
+      color="black" line-height=55 align=right
+      width="1.1" rotation="0 -90 0" position="1 1.5 0.1"
+      animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500">
+    </a-text>
+
+    <a-text class="chat" opacity="0"
+      value="That's the fortunate part for us; he was
+      stopped by his window and sent to the station"
+      color="#800080" line-height=55 align=left
+      width="1.1" rotation="0 -90 0" position="1 1.5 0.25"
+      animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500; delay: 2000">
+    </a-text>
+
+    <a-text class="chat" opacity="0"
+      value="What a lovely neighbor...
+      we may have been marked by the department!
+      He seems never lived with other people before
+      so didn't know how community works..."
+      color="#800080" line-height=55 align=left
+      width="1.1" rotation="0 -90 0" position="1 1.25 0.25"
+      animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500; delay: 5000">
+    </a-text>
+
+    <a-text class="chat" opacity="0"
+      value="- -"
+      color="black" line-height=55 align=center
+      width="5" rotation="0 -90 0" position="1 1 0.5"
+      animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500; delay: 6000">
+    </a-text>
+
+    <a-image id="out" class="clickable" scale="0 0 0"
+     src= "#13f" width="0.4" height="0.4" position="0.3 1.8 -2" rotation="0 0 0"
+     animation__on2="startEvents: show2; property: scale; to: 1 1 1; dur: 100; delay: 7000"
+     animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
      weblink="url: 13-elevator.html">
  </a-image>
 

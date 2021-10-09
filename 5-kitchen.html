@@ -49,68 +49,51 @@ z-index: 1;'>
 
 <script>
 window.addEventListener("load", function(){
-    setInterval(pippo, 2000);
+    setInterval(pippo, 3000);
 });
 function pippo(){
     var load_screen = document.getElementById("preload");
     document.body.removeChild(load_screen);
 }
 
-AFRAME.registerComponent("hide", {
+AFRAME.registerComponent("talk0", {
   init: function() {
-    this.el.addEventListener("click", (e) => {
-      let hide = document.querySelector("#talkbutton")
-      hide.setAttribute("visible", false)
-    }, {once: true})
-  }
+     var pieces = document.querySelectorAll(".chat, .clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show0")}
+     }, {once: true})
+   }
 })
-AFRAME.registerComponent("talk1", {
+
+AFRAME.registerComponent("proc1", {
   init: function() {
-    this.el.addEventListener("click", (e) => {
-      let talk1 = document.querySelector("#t2")
-      talk1.setAttribute("visible");
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t3")
-      talk1.setAttribute("visible")
-    }, 3000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t4")
-      talk1.setAttribute("visible")
-    }, 6000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t5")
-      talk1.setAttribute("visible")
-    }, 9000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t6")
-      talk1.setAttribute("visible")
-    }, 12000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t7")
-      talk1.setAttribute("visible")
-    }, 14000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t8")
-      talk1.setAttribute("visible")
-    }, 22000);
-    setTimeout(() => {
-      let talk1 = document.querySelector("#t9")
-      talk1.setAttribute("visible")
-    }, 25000);
-  setTimeout(() => {
-      let talk1 = document.querySelector("#t10")
-      talk1.setAttribute("visible")
-    }, 32000);
-  setTimeout(() => {
-      let talk1 = document.querySelector("#t11")
-      talk1.setAttribute("visible")
-    }, 35000);
-  setTimeout(() => {
-      let talk1 = document.querySelector("#out")
-      talk1.setAttribute("visible")
-    }, 36000);
-    }, {once: true})
-  }
+    var pieces = document.querySelectorAll(".chat, .clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show1")}
+     }, {once: true})
+   }
+})
+
+AFRAME.registerComponent("proc2", {
+  init: function() {
+    var pieces = document.querySelectorAll(".chat, .clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show2")}
+     }, {once: true})
+   }
+})
+
+AFRAME.registerComponent("proc3", {
+  init: function() {
+     var pieces = document.querySelectorAll(".chat, .clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show3")}
+     }, {once: true})
+   }
 })
 
 
@@ -135,173 +118,153 @@ loading-screen="dotsColor: white; backgroundColor: black">
 <img id="kitchen" src="images/kitchen.jpg">
 <img id="12f" src="images/direction/12f.png">
 <img id="talk" src="images/screen/talk.png">
+<img id="proceed" src="images/screen/proceed.png" alt="">
 </a-assets>
 
   <a-sky id="skyid" src="#kitchen" rotation="0 0 0"></a-sky>
 
-  <a-text
+  <a-text class="chat"
+    line-height=55 align=center width="1.1"
+    position="-0.5 1 -0.8" rotation="0 45 0"
     value="Wow
     that's probably the best temaki
      I've got over these years!!"
-    line-height=55
-    align=center
-    width="1.1"
-    position="-0.5 1 -0.8"
-    rotation="0 45 0"
-    animation="property: opacity; from: 1; to: 0.25; dur: 1000; dir: alternate; loop: true">
-  </a-text>
-
-  <a-text id="t1"
-    value="That's reserved to celebrate your model shop,
-    you know how hard to get good tuna these days"
-    color="#8C2300"
-    line-height=55
-    align=right
-    width="1.1"
-    position="-0.95 2.25 1"
-    rotation="0 180 0">
-  </a-text>
-
-  <a-text id="t2"
-    visible="false"
-    value="ye I was about to ask how, last time I checked
-    the fishery strike went insane"
-    color="black"
-    line-height=55
-    align=left
-    width="1.1"
-    position="0.4 2.1 1"
-    rotation="0 180 0">
-  </a-text>
-
-  <a-text id="t3"
-    visible="false"
-    value="something with my new job, like you don't
-    wanna know how @4F got those printed books"
-    color="#8C2300"
-    line-height=55
-    align=right
-    width="1.1"
-    position="-0.95 1.95 1"
-    rotation="0 180 0">
-  </a-text>
-
-  <a-text id="t4"
-    visible="false"
-    value="Ah I see, everyone here has some secrets,
-    its enough to know that you are the best chef!"
-    color="black"
-    line-height=55
-    align=left
-    width="1.1"
-    position="0.4 1.8 1"
-    rotation="0 180 0">
-  </a-text>
-
-  <a-text id="t5"
-    visible="false"
-    value="Talking about secrets, I just accidently saw your
-    upstairs last night on my way down from @14F"
-    color="#8C2300"
-    line-height=55
-    align=right
-    width="1.1"
-    position="-0.95 1.65 1"
-    rotation="0 180 0">
-  </a-text>
-
-  <a-text id="t6"
-    visible="false"
-    value="...is this today's chilling story?"
-    color="black"
-    line-height=55
-    align=left
-    width="1.1"
-    position="0.4 1.5 1"
-    rotation="0 180 0">
-  </a-text>
-
-  <a-text id="t7"
-    visible="false"
-    value="No its real! I used stairwell for fresh air
-    after @14F's evening tea session. And there he
-    was, smoking by his door! Luckily we were like
-    more than 3m apart so we were legally fine"
-    color="#8C2300"
-    line-height=55
-    align=right
-    width="1.1"
-    position="-0.95 1.3 1"
-    rotation="0 180 0">
-  </a-text>
-
-  <a-text id="t8"
-    visible="false"
-    value="How was he like? Did you talk to him?"
-    color="black"
-    line-height=55
-    align=left
-    width="1.1"
-    position="0.4 1.1 1"
-    rotation="0 180 0">
-  </a-text>
-
-  <a-text id="t9"
-    visible="false"
-    value="He's just a normal old man, said hello like old
-    people do, then walked in to clear my way down,
-    I took the airscanned elevator for safety though"
-    color="#8C2300"
-    line-height=55
-    align=right
-    width="1.1"
-    position="-0.95 0.95 1"
-    rotation="0 180 0">
-  </a-text>
-
-  <a-text id="t10"
-    visible="false"
-    value="Old generation with old ways to live, so that make
-    sense why he won't join us to share his stuffs"
-    color="black"
-    line-height=55
-    align=left
-    width="1.1"
-    position="0.4 0.7 1"
-    rotation="-15 180 0">
-  </a-text>
-
-  <a-text id="t11"
-    visible="false"
-    value="He looked nice though, as long as he keep
-    reporting his daily COVID result, we should be fine
-    to continue with our home extension"
-    color="#8C2300"
-    line-height=55
-    align=right
-    width="1.1"
-    position="-0.8 0.55 0.9"
-    rotation="-30 180 0">
+    animation="property: opacity; from: 1; to: 0.25; dur: 1000; dir: alternate; loop: true"
+    animation__hide1="startEvents: show1; property: visible; to: false">
   </a-text>
 
   <a-image id="talkbutton" class="clickable"
-       src= "#talk"
-       animation="property: opacity; from: 1; to: 0.3; dur: 500; dir: alternate; loop: true"
-       width="0.2" height="0.1"
-       position="-0.36 1.8 0.5"
-       rotation="0 180 0"
-       hide
-       talk1>
+     src= "#talk" rotation="0 180 0" width="0.24" height="0.12" position="0.3 1.55 1"
+     animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+     animation__off0="startEvents: show0; property: scale; to: 0 0 0; dur: 100"
+     talk0>
    </a-image>
 
-<a-image id="out" class="clickable"
-    visible="false"
-     src= "#12f"
-     animation="property: opacity; from: 1; to: 0.3; dur: 500; dir: alternate; loop: true"
-     width="0.4" height="0.5"
-     position="1.8 1.3 0.3"
-     rotation="0 -90 0"
-     opacity=0.8
+  <a-text class="chat"
+    value="That's reserved to celebrate your model shop,
+    you know how hard to get good tuna these days"
+    color="#8C2300" line-height=55 width="1.1" align=right
+    rotation="0 180 0" position="-0.95 1.75 1"
+    animation__hide1="startEvents: show1; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat" opacity="0"
+    value="ye I was about to ask how, last time I checked
+    the fishery strike went insane"
+    color="black" line-height=55 width="1.1" align=left
+    rotation="0 180 0" position="0.4 1.6 1"
+    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500"
+    animation__hide1="startEvents: show1; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat" opacity="0"
+    value="well...if with some secret source then...
+    its enought to that know you are the best chef!"
+    color="black" line-height=55 width="1.1" align=left
+    rotation="0 180 0" position="0.4 1.45 1"
+    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500; delay: 3000"
+    animation__hide1="startEvents: show1; property: visible; to: false">
+  </a-text>
+
+  <a-text class="chat" opacity="0"
+    value="Talking about secrets, I accidently saw your
+    upstairs last night on my way down from @14F"
+    color="#8C2300" line-height=55 width="1.15" align=right
+    rotation="0 180 0" position="-0.95 1.25 1"
+    animation__show0="startEvents: show0; property: opacity; to: 1; dur: 500; delay: 7000"
+    animation__hide1="startEvents: show1; property: visible; to: false">
+  </a-text>
+
+  <a-image id="pro1" class="clickable" scale="0 0 0"
+    src= "#proceed" rotation="0 180 0" width="0.24" height="0.12" position="0.3 1.1 1"
+    animation__show0="startEvents: show0; property: scale; to: 1 1 1; dur: 100; delay: 8000"
+    animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+    animation__off1="startEvents: show1; property: scale; to: 0 0 0; dur: 100"
+    proc1>
+   </a-image>
+
+   <a-text class="chat" opacity="0"
+     value="Ah here we go again, you know these tricks
+     won't scare me anymore..."
+     color="black" line-height=55 width="1.1" align=left
+     rotation="0 180 0" position="0.4 1.6 1"
+     animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500"
+     animation__hide2="startEvents: show2; property: visible; to: false">
+   </a-text>
+
+   <a-text class="chat" opacity="0"
+     value="No this one's real! I took the stairwell for
+     fresh air after @14F's eventing tea session. And
+     he was there smoking by his door! Luckily we were
+     like more than 3m apart so it's legally fine"
+     color="#8C2300" line-height=55 width="1.15" align=right
+     rotation="0 180 0" position="-0.95 1.35 1"
+     animation__show1="startEvents: show1; property: opacity; to: 1; dur: 500; delay: 4000"
+     animation__hide2="startEvents: show2; property: visible; to: false">
+   </a-text>
+
+   <a-image id="pro2" class="clickable" scale="0 0 0"
+     src= "#proceed" rotation="0 180 0" width="0.24" height="0.12" position="0.3 1.1 1"
+     animation__show1="startEvents: show1; property: scale; to: 1 1 1; dur: 100; dur: 500; delay: 5000"
+     animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+     animation__off2="startEvents: show2; property: scale; to: 0 0 0; dur: 100"
+     proc2>
+    </a-image>
+
+    <a-text class="chat" opacity="0"
+      value="...so how was he like? Did you talk to him?"
+      color="black" line-height=55 width="1.1" align=left
+      rotation="0 180 0" position="0.4 1.6 1"
+      animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500"
+      animation__hide3="startEvents: show3; property: visible; to: false">
+    </a-text>
+
+    <a-text class="chat" opacity="0"
+      value="He's just a normal old man, said hello like old
+      people do, then walked in to clear my way down,
+      I took the airscanned elevator for safety though"
+      color="#8C2300" line-height=55 width="1.15" align=right
+      rotation="0 180 0" position="-0.95 1.45 1"
+      animation__show2="startEvents: show2; property: opacity; to: 1; dur: 500; delay: 2000"
+      animation__hide3="startEvents: show3; property: visible; to: false">
+    </a-text>
+
+    <a-image id="pro3" class="clickable" scale="0 0 0"
+      src= "#proceed" rotation="0 180 0" width="0.24" height="0.12" position="0.3 1.3 1"
+      animation__show2="startEvents: show2; property: scale; to: 1 1 1; dur: 100; dur: 500; delay: 3000"
+      animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+      animation__off3="startEvents: show3; property: scale; to: 0 0 0; dur: 100"
+      proc3>
+     </a-image>
+
+     <a-text class="chat" opacity="0"
+       value="Do you think stairwell can give us more chances
+       inviting him to join the Home Extension?"
+       color="black" line-height=55 width="1.1" align=left
+       rotation="0 180 0" position="0.4 1.6 1"
+       animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500">
+     </a-text>
+
+     <a-text class="chat" opacity="0"
+       value="I won't bother, as long as he keep reporting
+       his daily COVID result, we should be fine doing
+       Home Extension without him"
+       color="#8C2300" line-height=55 width="1.15" align=right
+       rotation="0 180 0" position="-0.95 1.4 1"
+       animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500; delay: 4000">
+     </a-text>
+
+     <a-text class="chat" opacity="0"
+       value="- -"
+       color="black" line-height=55 width="5" align=center
+       rotation="0 180 0" position="0 1.2 1"
+       animation__show3="startEvents: show3; property: opacity; to: 1; dur: 500; delay: 5000">
+     </a-text>
+
+<a-image id="out" class="clickable" scale="0 0 0" opacity=0.8
+     src= "#12f" width="0.4" height="0.5" rotation="0 -90 0" position="1.8 1.3 0.3"
+     animation__on3="startEvents: show3; property: scale; to: 1 1 1; dur: 100; delay: 5000"
+     animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
      weblink="url: 6-message.html">
  </a-image>
 
