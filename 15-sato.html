@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>TYO-08/09/2032</title>
-<script src="aframe/aframe.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="dist/aframe-particle-system-component.min.js"></script>
 <link rel="stylesheet" href="css/custom.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -54,6 +55,10 @@ loading-screen="dotsColor: white; backgroundColor: black">
 </a-assets>
 
   <a-sky id="skyid" src="#sato" rotation="0 -90 0"></a-sky>
+
+  <a-entity position="0 3 -15" particle-system=
+  "preset: dust; particleCount: 500">
+  </a-entity>
 
  <a-image
       src= "#try" class="clickable"
