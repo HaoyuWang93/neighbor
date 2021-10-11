@@ -39,7 +39,7 @@ z-index: 1;'>
 
   <script>
   window.addEventListener("load", function(){
-      setInterval(pippo, 2000);
+      setInterval(pippo, 20);
   });
   function pippo(){
       var load_screen = document.getElementById("preload");
@@ -94,11 +94,11 @@ z-index: 1;'>
       setTimeout(() => {
         let timeout = document.querySelector("#go")
         timeout.setAttribute("visible")
-    }, 14000);
+    }, 14500);
       setTimeout(() => {
         let timeout = document.querySelector("#door")
         timeout.setAttribute("visible")
-    }, 14000);
+    }, 14500);
     }, {once: true})
   }
 })
@@ -153,6 +153,18 @@ loading-screen="dotsColor: white; backgroundColor: black">
     hide
     timeout></a-image>
 
+  <a-text id="go"
+    visible="false"
+    value="Go visit your neighbors"
+    color="black"
+    line-height=55
+    align=center
+    width="2"
+    position="-1.5 0.15 -1.5"
+    animation="property: opacity; from: 1; to: 0.3; dur: 500; dir: alternate; loop: true"
+    rotation="0 45 0">
+  </a-text>
+
  <a-image id="door" class="clickable"
     visible="false"
     src= "#exit"
@@ -162,16 +174,6 @@ loading-screen="dotsColor: white; backgroundColor: black">
     animation="property: opacity; from: 1; to: 0.3; dur: 500; dir: alternate; loop: true"
     weblink="url: 2-elevator.html">
 </a-image>
-
-  <a-text id="go"
-    visible="false"
-    value="Go visit your neighbors"
-    line-height=55
-    align=center
-    width="2"
-    position="-0.15 1.8 2"
-    rotation="0 180 0">
-  </a-text>
 
 </a-scene>
 
