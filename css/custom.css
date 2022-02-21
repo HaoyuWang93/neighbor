@@ -18,10 +18,6 @@ div.a-enter-ar {
   visibility: hidden;
 }
 
-div.a-enter-vr {
-  visibility: hidden;
-}
-
 #preload {
     position: fixed;
     left: 0;
